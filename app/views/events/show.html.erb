@@ -1,0 +1,5 @@
+<h1>event page</h1>
+<h3>Your name is <%= @event.user.first_name %></h3>
+<h3>Your partner's name is <%= @event.partner_name %></h3>
+
+<%= link_to "Guest List", event_guests_path(@event), class: "btn btn-primary" %>
