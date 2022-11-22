@@ -1,0 +1,31 @@
+<%= simple_form_for event do |f| %>
+  <% if event.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+        <% event.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="mb-3">
+    <%= f.label :partner_name, class: 'form-label' %>
+    <%= f.input :partner_name, class: 'form-control', label: false %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :venue, class: 'form-label' %>
+    <%= f.input :venue, class: 'form-control', label: false %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :date, class: 'form-label' %>
+    <%= f.input :date, class: 'form-control', html5: true, label: false %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>
