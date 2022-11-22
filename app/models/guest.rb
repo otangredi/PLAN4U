@@ -4,7 +4,7 @@ class Guest < ApplicationRecord
 
   enum status: {
     Pending: 0,
-    Confirmed: 1,
-    Denied: 2
+    Attending: 1,
+    Declined: 2
   }, _prefix: true
 end
