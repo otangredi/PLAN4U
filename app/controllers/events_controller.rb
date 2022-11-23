@@ -1,6 +1,11 @@
 class EventsController < ApplicationController
   before_action :set_event, only: :show
 
+  def index
+    @events = Event.all
+    @wedding = Event.where("name ILIKE ?", "%wedding%").first
+  end
+
   def new
     @event = Event.new
   end
@@ -26,6 +31,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:partner_name, :venue, :date)
+    params.require(:event).permit(:partner_name, :venue, :date, :name)
   end
 end
