@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_22_201433) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_23_154108) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "e_vites", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_e_vites_on_event_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.date "date"
@@ -22,6 +29,30 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_201433) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "guest_choices", force: :cascade do |t|
+    t.string "choices"
+    t.bigint "guest_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["guest_id"], name: "index_guest_choices_on_guest_id"
+  end
+
+  create_table "guest_seats", force: :cascade do |t|
+    t.bigint "guest_id", null: false
+    t.bigint "guest_table_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["guest_id"], name: "index_guest_seats_on_guest_id"
+    t.index ["guest_table_id"], name: "index_guest_seats_on_guest_table_id"
+  end
+
+  create_table "guest_tables", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_guest_tables_on_event_id"
   end
 
   create_table "guests", force: :cascade do |t|
@@ -50,6 +81,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_201433) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "e_vites", "events"
   add_foreign_key "events", "users"
+  add_foreign_key "guest_choices", "guests"
+  add_foreign_key "guest_seats", "guest_tables"
+  add_foreign_key "guest_seats", "guests"
+  add_foreign_key "guest_tables", "events"
   add_foreign_key "guests", "events"
 end
