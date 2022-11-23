@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :events do
     resources :guests, only: %i[index new create]
+    resources :guest_tables, only: %i[index new]
   end
   resources :guests, only: %i[edit update destroy]
+  resources :guest_tables, only: %i[edit update destroy]
+  post '/events/:event_id/guest_tables', to: "guest_tables#create", as: :create_table
 end

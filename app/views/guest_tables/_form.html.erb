@@ -1,0 +1,5 @@
+<%= form_with scope: :quantity, url: create_table_url(event), method: :post do |form| %>
+  <%= form.label :How_many_table, class: 'form-label' %>
+  <%= form.text_field :quantity %>
+  <%= form.submit value: 'Create', class:'d-none' %>
+<% end %>
