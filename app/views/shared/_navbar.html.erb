@@ -19,7 +19,7 @@
             <%= link_to "Seating Chart", "#", class: "nav-link" %>
           </li>
           <li class="nav-item active">
-            <%= link_to "Invitation Cards", "#", class: "nav-link" %>
+            <%= link_to "Invitation Cards", event_e_vites_path(current_user.events.first), class: "nav-link" %>
           </li>
         <% end %>
           <li class="nav-item dropdown">
