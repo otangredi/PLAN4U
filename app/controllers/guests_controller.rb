@@ -59,6 +59,7 @@ class GuestsController < ApplicationController
         event: current_user.events.first
       )
     end
+    redirect_to event_guests_path(Event.first)
   end
 
   private

@@ -3,8 +3,8 @@ class Guest < ApplicationRecord
   validates :status, presence: true
 
   enum status: {
-    Pending: 0,
+    Awaiting_Response: 0,
     Attending: 1,
-    Declined: 2
+    Not_Attending: 2
   }, _prefix: true
 end

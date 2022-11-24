@@ -10,10 +10,12 @@
   </thead>
 
   <tbody>
-      <tr><%= render "new", event: @event, guest: Guest.new %></tr>
-
+    <tr><%= render "new", event: @event, guest: Guest.new %></tr>
   </tbody>
 </table>
-      <% @guests.each do |guest| %>
-        <%= render "guest", guest: guest %>
-      <% end %>
+
+<%= link_to 'Import from Spreadsheet', guestlist_path %>
+
+<% @guests.each do |guest| %>
+  <%= render "guest", guest: guest %>
+<% end %>
