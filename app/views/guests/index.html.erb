@@ -1,18 +1,17 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">First name</th>
-      <th scope="col">Last name</th>
-      <th scope="col">Relationship</th>
-      <th scope="col">Email</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-
-  <%# <tbody> %>
-      <tr><%= render "new", event: @event, guest: Guest.new %></tr>
+<div class="container text-center my-3">
+  <div>
+    <div class="row border">
+      <div class="col">First name</div>
+      <div class="col">Last name</div>
+      <div class="col">Relationship</div>
+      <div class="col">Email</div>
+      <div class="col">Status</div>
+      <div class="col">Action</div>
+    </div>
+      <%= render "new", event: @event, guest: Guest.new %>
+      <%= link_to 'Import from Spreadsheet', guestlist_path %>
       <% @guests.each do |guest| %>
         <%= render "guest", guest: guest %>
       <% end %>
-  <%# </tbody> %>
-</table>
+  </div>
+</div>
