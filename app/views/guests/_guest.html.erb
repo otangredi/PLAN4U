@@ -9,10 +9,9 @@
       <td><%= link_to "Delete", event_guest_path(event_id: guest.event_id, id: guest.id), "data-turbo-method": "delete" %></td>
     <% end %>
   </tr>
-  <tr>
+  <tr class="<%= 'd-none' if guest.errors.any? %>">
     <%= simple_form_for([@event, guest],
                         html: {
-                          class: guest.errors.any? ? "" : "d-none",
                           data: { edit_guest_target: 'form', action: "submit->edit-guest#update" }
                         }) do |f| %>
       <td>

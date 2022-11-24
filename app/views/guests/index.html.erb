@@ -9,10 +9,10 @@
     </tr>
   </thead>
 
-  <%# <tbody> %>
+  <tbody>
       <tr><%= render "new", event: @event, guest: Guest.new %></tr>
       <% @guests.each do |guest| %>
         <%= render "guest", guest: guest %>
       <% end %>
-  <%# </tbody> %>
+  </tbody>
 </table>
