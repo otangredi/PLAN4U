@@ -11,8 +11,9 @@
 
   <tbody>
       <tr><%= render "new", event: @event, guest: Guest.new %></tr>
+
+  </tbody>
+</table>
       <% @guests.each do |guest| %>
         <%= render "guest", guest: guest %>
       <% end %>
-  </tbody>
-</table>
