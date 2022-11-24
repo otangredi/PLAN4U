@@ -1,19 +1,17 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">First name</th>
-      <th scope="col">Last name</th>
-      <th scope="col">Relationship</th>
-      <th scope="col">Email</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
+<div class="container text-center my-3">
+  <div>
+    <div class="row border">
+      <div class="col">First name</div>
+      <div class="col">Last name</div>
+      <div class="col">Relationship</div>
+      <div class="col">Email</div>
+      <div class="col">Status</div>
+      <div class="col">Action</div>
+    </div>
 
-  <tbody>
-      <tr><%= render "new", event: @event, guest: Guest.new %></tr>
-
-  </tbody>
-</table>
+      <%= render "new", event: @event, guest: Guest.new %>
       <% @guests.each do |guest| %>
         <%= render "guest", guest: guest %>
       <% end %>
+  </div>
+</div>
