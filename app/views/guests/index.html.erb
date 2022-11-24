@@ -1,33 +1,18 @@
-<table class='table'>
+<table class="table">
   <thead>
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Relationship</th>
-    <th>Status</th>
-    <th>Email</th>
-
-    <th colspan=3>Actions</th>
+    <tr>
+      <th scope="col">First name</th>
+      <th scope="col">Last name</th>
+      <th scope="col">Relationship</th>
+      <th scope="col">Email</th>
+      <th scope="col">Action</th>
+    </tr>
   </thead>
-  <tbody>
-    <% @guests.each do |guest| %>
-      <tr>
-        <td><%= guest.first_name %></td>
-        <td><%= guest.last_name %></td>
-        <td><%= guest.relationship %></td>
-        <td><%= guest.status %></td>
-        <td><%= guest.email %></td>
 
-        <td><%= link_to "Edit", edit_guest_path(guest), "data-controller": "turbo" %></td>
-        <td>
-          <%= link_to "Delete", guest_path(guest),
-            "data-turbo-method": :delete,
-            "data-turbo-confirm": "Are you sure?" %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
+  <%# <tbody> %>
+      <tr><%= render "new", event: @event, guest: Guest.new %></tr>
+      <% @guests.each do |guest| %>
+        <%= render "guest", guest: guest %>
+      <% end %>
+  <%# </tbody> %>
 </table>
-
-<br>
-
-<%= link_to "New guest", new_event_guest_path(@event), "data-controller": "turbo" %>

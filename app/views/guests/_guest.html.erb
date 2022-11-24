@@ -1,0 +1,35 @@
+<table data-controller="edit-guest">
+  <tr class="<%= 'd-none' if guest.errors.any? %>" data-edit-guest-target="infos">
+    <td><%= guest.first_name %></td>
+    <td><%= guest.last_name %></td>
+    <td><%= guest.relationship %></td>
+    <td><%= guest.email %></td>
+    <% if action_name != "show" %>
+      <td><button aria-label="Edit guest" data-action='click->edit-guest#displayForm'>Edit</button></td>
+      <td><%= link_to "Delete", event_guest_path(event_id: guest.event_id, id: guest.id), "data-turbo-method": "delete" %></td>
+    <% end %>
+  </tr>
+  <tr>
+    <%= simple_form_for([@event, guest],
+                        html: {
+                          class: guest.errors.any? ? "" : "d-none",
+                          data: { edit_guest_target: 'form', action: "submit->edit-guest#update" }
+                        }) do |f| %>
+      <td>
+        <%= f.input :first_name, class: "form-control rounded td", label: false %>
+      </td>
+      <td>
+        <%= f.input :last_name, class: "form-control rounded", label: false %>
+      </td>
+      <td>
+        <%= f.input :relationship, class: "form-control rounded", label: false %>
+      </td>
+      <td>
+        <%= f.input :email, class: "form-control rounded", label: false %>
+      </td>
+      <td>
+        <%= f.submit class: "btn btn-primary", label: false %>
+      </td>
+    <% end %>
+  </tr>
+</table>
