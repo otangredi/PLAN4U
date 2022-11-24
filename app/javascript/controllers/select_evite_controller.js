@@ -34,4 +34,33 @@ export default class extends Controller {
         // code block
     }
   }
+
+  saveEvite(event) {
+    //console.log(this.eviteTargets)
+    let select_evite = ''
+    this.eviteTargets.forEach((element, index) => {
+      if (element.classList.value == '') {
+        select_evite = element.id }
+      //element.hidden = index !== this.index
+    })
+    //console.log(select_evite)
+    this.save(select_evite)
+  }
+
+  save(select_evite) {
+
+    const url = this.eviteTarget.action
+    console.log(this.eviteTargets);
+
+    // fetch(url, {
+    //   method: 'POST',
+    //   headers: { 'Accept': 'text/plain' },
+    //   body: new FormData(select_evite)
+    // })
+    //   .then(response => response.text())
+    //   .then((data) => {
+    //     // console.log(data);
+    //     this.element.outerHTML = data
+    //   })
+  }
 }
