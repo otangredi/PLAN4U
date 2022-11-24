@@ -1,4 +1,4 @@
-<% if @events.all.first.present? %>
+<% if current_user.events.present? %>
 <div class="card-category"><%= @events.all.first.name %></div>
 <% else %>
 <div class="card-category"><%= link_to "Create an event", new_event_path, "data-controller": "turbo", class: "btn btn-primary" %></div>
