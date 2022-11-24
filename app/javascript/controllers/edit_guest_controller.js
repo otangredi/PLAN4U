@@ -5,13 +5,14 @@ export default class extends Controller {
   static targets = ['infos', 'form']
 
   connect() {
-    console.log(this.formTarget);
+    // console.log(this.infosTarget);
     // console.log(this.element);
     // console.log("hi");
 
   }
 
   displayForm() {
+    console.log(this.formTargets)
     this.infosTarget.classList.add('d-none')
     this.formTarget.classList.remove('d-none')
   }

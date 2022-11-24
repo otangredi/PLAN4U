@@ -1,4 +1,0 @@
-<h1><%= @event.name %> D  <%= (Date.today - @event.date).to_i %></h1>
-<h3><%= @event.user.first_name %>💍<%= @event.partner_name %></h3>
-
-<%= link_to "Guest List", event_guests_path(@event), class: "btn btn-primary" %>
