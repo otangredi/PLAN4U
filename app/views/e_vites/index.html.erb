@@ -1,0 +1,18 @@
+<h1>E-vites</h1>
+<div class="container" data-controller="select-evite">
+  <div class="d-flex">
+    <div class="d-flex flex-column mb-3 ">
+      <div data-action='click->select-evite#displayEvite'><%= image_tag "e_vite_1.png", id: "e_vite_1", class: "w-25 p-3"%></div>
+      <div data-action='click->select-evite#displayEvite'><%= image_tag "e_vite_2.png", id: "e_vite_2", class: "w-25 p-3"%></div>
+      <div data-action='click->select-evite#displayEvite'><%= image_tag "e_vite_3.png", id: "e_vite_3", class: "w-25 p-3"%></div>
+    </div>
+    <div class="">
+      <div data-select-evite-target='evite'><%= render "evite_template_1"%></div>
+      <div data-select-evite-target='evite'><%= render "evite_template_2"%></div>
+      <div data-select-evite-target='evite'><%= render "evite_template_3"%></div>
+    </div>
+    <div class="">
+      <button aria-label="Save" data-action='click->save-evite#save'>Save</button>
+    </div>
+  </div>
+</div>
