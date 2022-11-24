@@ -1,21 +1,26 @@
-<%= simple_form_for([event, guest], id: dom_id(guest, "form")) do |f| %>
-  <td>
-    <%= f.input :first_name, class: "form-control rounded", label: false %>
+<%= simple_form_for([event, guest]) do |f| %>
+  <div class="row">
+  <div class="col">
+    <%= f.input :first_name, class: "form-control rounded col", label: false %>
     <%= inline_error_for(:first_name, guest) %>
-  </td>
-  <td>
-    <%= f.input :last_name, class: "form-control rounded", label: false %>
+  </div>
+  <div class="col">
+    <%= f.input :last_name, class: "form-control rounded col", label: false %>
     <%= inline_error_for(:last_name, guest) %>
-  </td>
-  <td>
-    <%= f.input :relationship, class: "form-control rounded", label: false %>
+  </div>
+  <div class="col">
+    <%= f.input :relationship, class: "form-control rounded col", label: false %>
     <%= inline_error_for(:relationship, guest) %>
-  </td>
-  <td>
-    <%= f.input :email, class: "form-control rounded", label: false %>
+  </div>
+  <div class="col">
+    <%= f.input :email, class: "form-control rounded col", label: false %>
     <%= inline_error_for(:email, guest) %>
-  </td>
-  <td>
-    <%= f.submit class: "btn btn-primary", label: false %>
-  </td>
+  </div>
+  <div class="col">
+    <%= f.input :status, class: "form-control rounded", label: false, collection: Guest.statuses.keys, selected: 0 %>
+  </div>
+  <div class="col">
+    <%= f.submit class: "btn btn-primary col", label: false %>
+  </div>
+  </div>
 <% end %>
