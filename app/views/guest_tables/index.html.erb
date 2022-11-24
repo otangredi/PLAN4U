@@ -1,0 +1,7 @@
+<h1>my tables</h1>
+
+<%= render "form", event: @event %>
+
+<% @tables.each do |table| %>
+<%= table.id %>
+<% end %>

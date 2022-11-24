@@ -2,3 +2,4 @@
 <h3><%= @event.user.first_name %>💍<%= @event.partner_name %></h3>
 
 <%= link_to "Guest List", event_guests_path(@event), class: "btn btn-primary" %>
+<%= link_to "Guest Table", event_guest_tables_path(@event), class: "btn btn-primary" %>
