@@ -4,6 +4,7 @@ class EventsController < ApplicationController
   def index
     @events = current_user.events.first
     @wedding = Event.where("name ILIKE ?", "%wedding%").first
+    count_status
   end
 
   def new
@@ -25,6 +26,22 @@ class EventsController < ApplicationController
   end
 
   private
+
+  def count_status
+    @yes = 0
+    @no = 0
+    @awaiting = 0
+    @wedding.guests.each do |guest|
+      case guest.status
+      when "Attending"
+        @yes += 1
+      when "Not_Attending"
+        @no += 1
+      when "Awaiting_Response"
+        @awaiting += 1
+      end
+    end
+  end
 
   def set_event
     @event = Event.find(params[:id])
