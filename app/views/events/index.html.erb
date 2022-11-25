@@ -1,5 +1,5 @@
 <% if current_user.events.present? %>
-<div class="card-category"><%= @events.name %></div>
+  <div class="card-category"><%= @events.name %></div>
 <% else %>
-<div class="card-category"><%= link_to "Create an Event", new_event_path, "data-controller": "turbo", class: "btn btn-primary" %></div>
+  <div class="card-category"><%= link_to "Create an Event", new_event_path, "data-controller": "turbo", class: "btn btn-primary" %></div>
 <% end %>
