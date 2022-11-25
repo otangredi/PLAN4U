@@ -1,0 +1,5 @@
+<h1><%= current_user.first_name %> and <%= current_user.events.first.partner_name %></h1>
+<h2>wants to invite <%= @guest.name %></h2>
+
+<button id="btn-confirm" class="btn"><%= link_to "Attending", attendance_path(@guest, 1), data: { 'turbo-method': :patch }%></button>
+<button class="btn"><%= link_to "Decline", attendance_path(@guest, 2), data: { 'turbo-method': :patch }%></button>

@@ -1,11 +1,11 @@
-Id,First_Name,Last_Name,Relationship,Email
-1,Elena,Zangari,mother,elena@gmail.com
-2,Pasquale,Tangredi,father,lino@gmail.com
-3,Chloe,Tangredi,sister,chloe@gmail.com
-4,Cathy,Lopez,mother-in-law,cathy@gmail.com
-5,Carmine,Marcarella,father-in-law,carmine@gmail.com
-6,Selina,Marcarella,sister,selina@gmail.com
-7,Josephine,Gurreri,friend,josephine@gmail.com
-8,Massimo,Romeo,friend,massimo@gmail.com
-9,Dominic,Agnelli,uncle,dominic@gmail.com
-10,Ryan,Fontes,cousin,ryan@gmail.com
+Id,Name,Relationship,Email
+1,Elena Zangari,Mother,elena@gmail.com
+2,Pasquale Tangredi,Father,lino@gmail.com
+3,Chloe Tangredi,Sister,chloe@gmail.com
+4,Cathy Lopez,Mother-in-law,cathy@gmail.com
+5,Carmine Marcarella,Father-in-law,carmine@gmail.com
+6,Selina Marcarella,Sister,selina@gmail.com
+7,Josephine Gurreri,Friend,josephine@gmail.com
+8,Massimo Romeo,Friend,massimo@gmail.com
+9,Dominic Agnelli,Uncle,dominic@gmail.com
+10,Ryan Fontes,Cousin,ryan@gmail.com

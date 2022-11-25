@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
   has_many :guests
   has_many :guest_tables
-  validates_uniqueness_of :name, case_sensitive: false
+  has_one :e_vite
 end

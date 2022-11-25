@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: :show
 
   def index
-    @events = Event.all
+    @events = current_user.events.first
     @wedding = Event.where("name ILIKE ?", "%wedding%").first
     count_status
   end

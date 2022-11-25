@@ -6,6 +6,12 @@ class GuestsController < ApplicationController
   def index
     @guests = Guest.all
     @event = Event.find(params[:event_id])
+
+    if params[:query].nil?
+      @guests = Guest.all
+    else
+      @guests = Guest.search_by_name(params[:query])
+    end
   end
 
   def new
@@ -52,10 +58,9 @@ class GuestsController < ApplicationController
 
     guest_list[1..].each do |guest|
       Guest.create!(
-        first_name: guest[1],
-        last_name: guest[2],
-        relationship: guest[3],
-        email: guest[4],
+        name: guest[1],
+        relationship: guest[2],
+        email: guest[3],
         event: current_user.events.first
       )
     end
@@ -69,7 +74,7 @@ class GuestsController < ApplicationController
   end
 
   def guest_params
-    params.require(:guest).permit(:first_name, :last_name, :relationship, :status, :email)
+    params.require(:guest).permit(:name, :relationship, :status, :email)
   end
 end
 

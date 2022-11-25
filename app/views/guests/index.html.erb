@@ -1,17 +1,28 @@
 <div class="container text-center my-3">
   <div>
-    <div class="row border">
-      <div class="col">First name</div>
-      <div class="col">Last name</div>
-      <div class="col">Relationship</div>
-      <div class="col">Email</div>
-      <div class="col">Status</div>
-      <div class="col">Action</div>
-    </div>
-      <%= render "new", event: @event, guest: Guest.new %>
-      <%= link_to 'Import from Spreadsheet', guestlist_path %>
+    <%= form_with url: event_guests_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search guest"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+
+    <div class="m-4"><%= link_to 'Import from Spreadsheet', guestlist_path %></div>
+
+    <div class="mb-3"><%= render "new", event: @event, guest: Guest.new %></div>
+
+    <div class="row">
+      <div class="col border-bottom mb-3"><strong>Name</strong></div>
+      <div class="col border-bottom mb-3"><strong>Relationship</strong></div>
+      <div class="col border-bottom mb-3"><strong>Email</strong></div>
+      <div class="col border-bottom mb-3"><strong>RSVP Status</strong></div>
+      <div class="col border-bottom mb-3"></div>
+
       <% @guests.each do |guest| %>
-        <%= render "guest", guest: guest %>
+      <%= render "guest", guest: guest %>
       <% end %>
+    </div>
   </div>
 </div>

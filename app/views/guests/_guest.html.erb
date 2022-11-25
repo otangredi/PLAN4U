@@ -1,14 +1,13 @@
 <div data-controller="edit-guest">
   <div class="<%= 'd-none' if guest.errors.any? %> row" data-edit-guest-target="infos">
-    <div class="col"><%= guest.first_name %></div>
-    <div class="col"><%= guest.last_name %></div>
+    <div class="col"><%= guest.name %></div>
     <div class="col"><%= guest.relationship %></div>
     <div class="col"><%= guest.email %></div>
     <div class="col"><%= guest.status %></div>
     <% if action_name != "show" %>
       <div class="col">
         <button aria-label="Edit guest" data-action='click->edit-guest#displayForm'>Edit</button>
-        <%= link_to "Delete", event_guest_path(event_id: guest.event_id, id: guest.id), "data-turbo-method": "delete", "data-turbo-confirm": "Are you sure?" %>
+        <%= link_to "Delete", event_guest_path(event_id: guest.event_id, id: guest.id), "data-turbo-method": "delete", "data-turbo-confirm": "Are you sure you want to remove #{guest.name} from the guest list?" %>
       </div>
     <% end %>
   </div>
@@ -20,10 +19,7 @@
                         }) do |f| %>
       <div class="row">
         <div class="col">
-          <%= f.input :first_name, class: "form-control rounded td", label: false %>
-        </div>
-        <div class="col">
-          <%= f.input :last_name, class: "form-control rounded", label: false %>
+          <%= f.input :name, class: "form-control rounded td", label: false %>
         </div>
         <div class="col">
           <%= f.input :relationship, class: "form-control rounded", label: false %>
