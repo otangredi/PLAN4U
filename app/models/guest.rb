@@ -4,6 +4,13 @@ class Guest < ApplicationRecord
   has_many :guest_choices
   validates :status, presence: true
 
+  include PgSearch::Model
+  pg_search_scope :search_by_name,
+    against: [ :name ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
   enum status: {
     AwaitingResponse: 0,
     Attending: 1,
