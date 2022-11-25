@@ -14,4 +14,13 @@
         <%= render "guest", guest: guest %>
       <% end %>
   </div>
+
+  <%= form_with url: event_guests_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a guest"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
 </div>

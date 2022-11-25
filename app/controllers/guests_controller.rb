@@ -6,6 +6,12 @@ class GuestsController < ApplicationController
   def index
     @guests = Guest.all
     @event = Event.find(params[:event_id])
+
+    if params[:query].nil?
+      @guests = Guest.all
+    else
+      @guests = Guest.search_by_name(params[:query])
+    end
   end
 
   def new
