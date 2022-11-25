@@ -1,7 +1,7 @@
 class Guest < ApplicationRecord
   belongs_to :event
   has_one :guest_seat
-  has_many :guest_choices
+  has_one :guest_choice
   validates :status, presence: true
 
   include PgSearch::Model
