@@ -12,8 +12,8 @@ class Guest < ApplicationRecord
     }
 
   enum status: {
-    AwaitingResponse: 0,
+    Awaiting_Response: 0,
     Attending: 1,
-    NotAttending: 2
+    Not_Attending: 2
   }, _prefix: true
 end

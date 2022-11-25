@@ -7,7 +7,7 @@
     <% if action_name != "show" %>
       <div class="col">
         <button aria-label="Edit guest" data-action='click->edit-guest#displayForm'>Edit</button>
-        <%= link_to "Delete", event_guest_path(event_id: guest.event_id, id: guest.id), "data-turbo-method": "delete", "data-turbo-confirm": "Are you sure?" %>
+        <%= link_to "Delete", event_guest_path(event_id: guest.event_id, id: guest.id), "data-turbo-method": "delete", "data-turbo-confirm": "Are you sure you want to remove #{guest.name} from the guest list?" %>
       </div>
     <% end %>
   </div>
