@@ -1,4 +1,3 @@
-<h1>E-vites</h1>
 <div class="container" data-controller="select-evite">
   <div class="d-flex">
     <div class="d-flex flex-column mb-3 ">
@@ -12,10 +11,9 @@
       <div id="selected_evite_3"data-select-evite-target='evite'><%= render "evite_template_3"%></div>
     </div>
     <div class="">
-      <div><%= link_to "Save e_vite", create_e_vite_path(@event.id), class: "btn btn-primary", data_select_evite_target:'choise' %></div>
       <%= form_with model: @e_vite, url: create_e_vite_path(@event.id), data: { behavior: "autosave" }, method: :post do |form| %>
         <%= form.text_field :template_id, class:'d-none', id:'input_choise'%>
-        <%= form.submit value: 'Create'%>
+        <%= form.submit value: 'Save'%>
       <% end %>
     </div>
   </div>

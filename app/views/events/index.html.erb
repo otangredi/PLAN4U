@@ -1,13 +1,35 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.rawpixel.com/private/static/images/website/2022-05/upwk61806368-wikimedia-image-kowbmqei.jpg?w=1200&h=1200&dpr=1&fit=clip&crop=default&fm=jpg&q=75&vib=3&con=3&usm=15&cs=srgb&bg=F4F4F3&ixlib=js-2.2.1&s=c9a9045d621bc1fc960f08ef8013b9c7);">
-  <div class="container">
-    <h1><%= current_user.first_name %>💍<%= @wedding[:partner_name] %></h1>
-    <h1>Happily Ever After in <%= (@wedding.date - Date.today).to_i %> days💕</h1>
+<div class="container mb-3">
+  <div class="row justify-content-between m-1">
+    <div class="banner text-center col-7">
+      <h1><%= current_user.first_name %>💍<%= @wedding[:partner_name] %></h1>
+      <h1><%= @wedding.date.strftime("%b.%d, %Y") %></h1>
+      <h1>Only <%= (@wedding.date - Date.today).to_i %> days to go!</h1>
+
+    </div>
+    <div class="plannig_check col-5 bg-white ml-2">
+      <div class=""></div>
+      <div class="d-flex flex-column">
+        <div class="item  mt-5 mb-3"><input class="form-check-input" type="checkbox" value="" id="Create_your_event">Create your event</div>
+        <div class="item mb-3"><input class="form-check-input" type="checkbox" value="" id="Create_your_guest_list">Create your guest list</div>
+        <div class="item mb-3"><input class="form-check-input" type="checkbox" value="" id="Design_your_invitation_card">Design your invitation card</div>
+        <div class="item mb-3"><input class="form-check-input" type="checkbox" value="" id="Send_your_invitation_card">Send your invitation card</div>
+      </div>
+    </div>
+  </div>
+  <div class="rsvp border rounded p-3 bg-white">
+    <h3 class="p-3 mb-3">RSVP summary</h3>
+    <div class="row row-cols-4 text-center">
+      <p class="border-bottom"><%= @yes %></p>
+      <p class="border-bottom"><%= @no %></p>
+      <p class="border-bottom"><%= @awaiting %></p>
+      <p class=""><%= @yes + @no + @awaiting%></p>
+      <p>Yes</p>
+      <p>No</p>
+      <p>Awaiting</p>
+      <p>Total</p>
+    </div>
+    <div class="d-flex justify-content-center mt-3">
+      <%= link_to "Add your guests", event_guests_path(current_user.events.first), class: "btn" %>
+    </div>
   </div>
 </div>
-
-
-<% @events.each do |event| %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    <%= link_to event.name, event_path(event) %>
-  </div>
-<% end %>
