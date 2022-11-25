@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   resources :guest_tables, only: %i[edit update destroy]
   resources :e_vites, only: %i[edit update destroy]
   post '/events/:event_id/guest_tables', to: "guest_tables#create", as: :create_table
+  post '/events/:event_id/e_vites', to: "e_vites#create", as: :create_e_vite
   get '/guestlist', to: 'guests#import_guests_from_file', as: :guestlist
 end

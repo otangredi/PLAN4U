@@ -7,12 +7,16 @@
       <div data-action='click->select-evite#displayEvite'><%= image_tag "e_vite_3.png", id: "e_vite_3", class: "w-25 p-3"%></div>
     </div>
     <div class="">
-      <div id="selected_evite_1" data-select-evite-target='evite'><%= render "evite_template_1"%></div>
+      <div id="selected_evite_1"data-select-evite-target='evite'><%= render "evite_template_1"%></div>
       <div id="selected_evite_2"data-select-evite-target='evite'><%= render "evite_template_2"%></div>
       <div id="selected_evite_3"data-select-evite-target='evite'><%= render "evite_template_3"%></div>
     </div>
     <div class="">
-      <button aria-label="Save" data-action='click->select-evite#saveEvite'>Save</button>
+      <div><%= link_to "Save e_vite", create_e_vite_path(@event.id), class: "btn btn-primary", data_select_evite_target:'choise' %></div>
+      <%= form_with model: @e_vite, url: create_e_vite_path(@event.id), data: { behavior: "autosave" }, method: :post do |form| %>
+        <%= form.text_field :template_id, class:'d-none', id:'input_choise'%>
+        <%= form.submit value: 'Create'%>
+      <% end %>
     </div>
   </div>
 </div>

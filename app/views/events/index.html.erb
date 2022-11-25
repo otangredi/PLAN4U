@@ -1,5 +1,13 @@
-<% if current_user.events.present? %>
-<div class="card-category"><%= @events.all.first.name %></div>
-<% else %>
-<div class="card-category"><%= link_to "Create an event", new_event_path, "data-controller": "turbo", class: "btn btn-primary" %></div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.rawpixel.com/private/static/images/website/2022-05/upwk61806368-wikimedia-image-kowbmqei.jpg?w=1200&h=1200&dpr=1&fit=clip&crop=default&fm=jpg&q=75&vib=3&con=3&usm=15&cs=srgb&bg=F4F4F3&ixlib=js-2.2.1&s=c9a9045d621bc1fc960f08ef8013b9c7);">
+  <div class="container">
+    <h1><%= current_user.first_name %>💍<%= @wedding[:partner_name] %></h1>
+    <h1>Happily Ever After in <%= (@wedding.date - Date.today).to_i %> days💕</h1>
+  </div>
+</div>
+
+
+<% @events.each do |event| %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <%= link_to event.name, event_path(event) %>
+  </div>
 <% end %>
