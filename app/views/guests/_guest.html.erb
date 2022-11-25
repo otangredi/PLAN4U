@@ -1,7 +1,6 @@
 <div data-controller="edit-guest">
   <div class="<%= 'd-none' if guest.errors.any? %> row" data-edit-guest-target="infos">
-    <div class="col"><%= guest.first_name %></div>
-    <div class="col"><%= guest.last_name %></div>
+    <div class="col"><%= guest.name %></div>
     <div class="col"><%= guest.relationship %></div>
     <div class="col"><%= guest.email %></div>
     <div class="col"><%= guest.status %></div>
@@ -20,10 +19,7 @@
                         }) do |f| %>
       <div class="row">
         <div class="col">
-          <%= f.input :first_name, class: "form-control rounded td", label: false %>
-        </div>
-        <div class="col">
-          <%= f.input :last_name, class: "form-control rounded", label: false %>
+          <%= f.input :name, class: "form-control rounded td", label: false %>
         </div>
         <div class="col">
           <%= f.input :relationship, class: "form-control rounded", label: false %>
