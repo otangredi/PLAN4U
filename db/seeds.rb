@@ -85,8 +85,7 @@ puts "Creating 30 random guest friend..."
     email: Faker::Internet.unique.email,
     status: "0",
     event_id: "1",
-    last_name: Faker::Name.last_name,
-    first_name: Faker::Name.unique.name
+    name: Faker::Name.unique.name
   )
   # puts "#{i + 1}. #{guest.name}"
 end

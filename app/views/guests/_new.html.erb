@@ -1,12 +1,8 @@
 <%= simple_form_for([event, guest]) do |f| %>
   <div class="row">
   <div class="col">
-    <%= f.input :first_name, class: "form-control rounded col", label: false %>
-    <%= inline_error_for(:first_name, guest) %>
-  </div>
-  <div class="col">
-    <%= f.input :last_name, class: "form-control rounded col", label: false %>
-    <%= inline_error_for(:last_name, guest) %>
+    <%= f.input :name, class: "form-control rounded col", label: false %>
+    <%= inline_error_for(:name, guest) %>
   </div>
   <div class="col">
     <%= f.input :relationship, class: "form-control rounded col", label: false %>
