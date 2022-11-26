@@ -1,30 +1,25 @@
-
 <div class="container mb-3">
   <div class="row justify-content-between m-1">
-  <% if current_user.events.present? %>
     <div class="banner text-center col-7">
-      <h1><%= current_user.first_name %>💍<%= @event[:partner_name] %></h1>
-      <h1><%= @event.date.strftime("%b.%d, %Y") %></h1>
+      <h1><%= current_user.first_name %> & <%= @event.partner_name %></h1>
+      <h1><%= @event.date.strftime("%B %e, %Y") %></h1>
       <h1>Only <%= (@event.date - Date.today).to_i %> days to go!</h1>
     </div>
-  <% else %>
-    <div class="banner text-center col-7">
-      <h1><%= link_to "Create an Event", new_event_path, "data-controller": "turbo", class: "btn btn-primary" %></h1>
-    </div>
-  <% end %>
 
     <div class="plannig_check col-5 bg-white ml-2">
       <div class=""></div>
       <div class="d-flex flex-column">
-        <div class="item  mt-5 mb-3"><input class="form-check-input" type="checkbox" value="" id="Create_your_event">Create your event</div>
-        <div class="item mb-3"><input class="form-check-input" type="checkbox" value="" id="Create_your_guest_list">Create your guest list</div>
-        <div class="item mb-3"><input class="form-check-input" type="checkbox" value="" id="Design_your_invitation_card">Design your invitation card</div>
-        <div class="item mb-3"><input class="form-check-input" type="checkbox" value="" id="Send_your_invitation_card">Send your invitation card</div>
+      <h3 class="p-3 mb-3">PLANNING CHECKLIST</h3>
+        <div class="item mt-5 mb-3"><input class="form-check-input" type="checkbox" value="" id="Create_your_event"> Create your event</div>
+        <div class="item mb-3"><input class="form-check-input" type="checkbox" value="" id="Create_your_guest_list"> Create your guest list</div>
+        <div class="item mb-3"><input class="form-check-input" type="checkbox" value="" id="Design_your_invitation_card"> Design your invitation card</div>
+        <div class="item mb-3"><input class="form-check-input" type="checkbox" value="" id="Send_your_invitation_card"> Send your invitation card</div>
       </div>
     </div>
   </div>
+
   <div class="rsvp border rounded p-3 bg-white">
-    <h3 class="p-3 mb-3">RSVP summary</h3>
+    <h3 class="p-3 mb-3">RSVP SUMMARY</h3>
     <div class="row row-cols-4 text-center">
       <p class="border-bottom"><%= @yes %></p>
       <p class="border-bottom"><%= @no %></p>
@@ -35,10 +30,9 @@
       <p>Awaiting</p>
       <p>Total</p>
     </div>
+
     <div class="d-flex justify-content-center mt-3">
       <%= link_to "Add your guests", event_guests_path(current_user.events.first), class: "btn" %>
     </div>
   </div>
-  <% end %>
-
 </div>
