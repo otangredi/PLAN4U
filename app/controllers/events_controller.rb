@@ -2,8 +2,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: :show
 
   def index
-    @events = current_user.events.first
-    @wedding = Event.where("name ILIKE ?", "%wedding%").first
+    @event = current_user.events.first
     count_status
   end
 
@@ -31,7 +30,7 @@ class EventsController < ApplicationController
     @yes = 0
     @no = 0
     @awaiting = 0
-    @wedding.guests.each do |guest|
+    @event.guests.each do |guest|
       case guest.status
       when "Attending"
         @yes += 1

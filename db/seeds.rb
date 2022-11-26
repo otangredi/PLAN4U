@@ -79,7 +79,7 @@ puts "Event Finished!"
 # puts "Guest familly Finished!"
 
 puts "Creating 30 random guest friend..."
-30.times do |i|
+30.times do
   Guest.create!(
     relationship: "Friend",
     email: Faker::Internet.unique.email,
