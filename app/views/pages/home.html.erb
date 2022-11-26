@@ -1,2 +1,13 @@
-<h1>Landing Page</h1>
-<%= link_to "Get Started", new_user_registration_path, class: "btn btn-primary" %>
+<% if current_user.present? %>
+  <h1>Welcome, <%= current_user.first_name %> <br>
+  <%= current_user.last_name %>!</h1>
+  <h5>You still have not created your event. <br>
+  Please create your event to see have <br>
+  Plan For You can help you with.</h5>
+  <%= link_to "Create an Event", new_event_path, "data-controller": "turbo", class: "btn btn-primary" %>
+<% else %>
+  <h1>Automated, Stress-Free<br>
+  Seating Chart Generator</h1>
+  <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+  <%= link_to "Get Started", new_user_registration_path, class: "btn btn-primary" %>
+<% end %>
