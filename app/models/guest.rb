@@ -1,5 +1,5 @@
 class Guest < ApplicationRecord
-  belongs_to :event
+  belongs_to :event, dependent: :destroy
   has_one :guest_seat
   has_one :guest_choice
   validates :status, presence: true

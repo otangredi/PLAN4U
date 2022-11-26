@@ -2,7 +2,7 @@ class GuestChoicesController < ApplicationController
   def index
     if params[:query].present?
       @guest = Guest.where("name ILIKE ?", "%#{params[:query]}%")
-      @guest.first.GuestChoice.create! unless @guest.first.guest_choice.present?
+      @guest.first.guest_choice = GuestChoice.new unless @guest.first.guest_choice.present?
       redirect_to guest_choice_path(@guest.first.guest_choice)
     end
   end
