@@ -1,0 +1,14 @@
+<h1>GuestChoices#rsvp</h1>
+
+<%= form_with url: find_rsvp_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find your invitation card"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+<% if @guest.present? %>
+  <%= link_to @guest.name, new_guest_guest_choice_path(@guest) %>
+<% end %>
