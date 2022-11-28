@@ -7,10 +7,10 @@ class GuestsController < ApplicationController
     @guests = Guest.all
     @event = Event.find(params[:event_id])
 
-    if params[:query].nil?
-      @guests = Guest.all
-    else
+    if params[:query].present?
       @guests = Guest.search_by_name(params[:query])
+    else
+      @guests = Guest.all
     end
   end
 
