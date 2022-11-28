@@ -1,0 +1,6 @@
+<p>edit</p>
+
+<%= simple_form_for([@guest, @guest_choice]) do |f| %>
+<%= f.input :choices, as: :check_boxes, collection: @guests, include_hidden: false %>
+<%= f.submit %>
+<% end %>
