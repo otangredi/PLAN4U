@@ -16,5 +16,8 @@ application.register("modal", ModalController)
 import SelectEviteController from "./select_evite_controller"
 application.register("select-evite", SelectEviteController)
 
+import SelectTableController from "./select_table_controller"
+application.register("select-table", SelectTableController)
+
 import TurboController from "./turbo_controller"
 application.register("turbo", TurboController)
