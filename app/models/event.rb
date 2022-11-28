@@ -3,4 +3,5 @@ class Event < ApplicationRecord
   has_many :guests, dependent: :destroy
   has_many :guest_tables, dependent: :destroy
   has_one :e_vite, dependent: :destroy
+  has_many :guest_choices, through: :guests
 end
