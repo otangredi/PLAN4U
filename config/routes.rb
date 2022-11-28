@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get '/guestlist', to: 'guests#import_guests_from_file', as: :guestlist
   get '/rsvp', to: 'guest_choices#find_rsvp', as: :find_rsvp
   patch '/guest_choices/:id/:status/attendance', to: "guest_choices#attendance", as: :attendance
+  get '/events/:event_id/send_evite', to: "guests#send_evite", as: :send_evite
 end

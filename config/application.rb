@@ -1,6 +1,7 @@
 require_relative "boot"
 
 require "rails/all"
+require "action_mailer/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -16,6 +17,7 @@ module PLAN4U
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    config.action_mailer.default_url_options = { host: 'http://localhost:3000.com' }
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

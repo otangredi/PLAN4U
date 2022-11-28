@@ -10,6 +10,7 @@
     <% end %>
 
     <div class="m-4"><%= link_to 'Import from Spreadsheet', guestlist_path %></div>
+    <div class="m-4"><%= link_to 'Send e-vite', send_evite_path(@event), class: "index-link" %></div>
 
     <div class="mb-3"><%= render "new", event: @event, guest: Guest.new %></div>
 
