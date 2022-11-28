@@ -41,6 +41,7 @@ class GuestChoicesController < ApplicationController
     @guest = Guest.find(params[:guest_id])
     @guest_choice = GuestChoice.find(params[:id])
     @guest_choice.choices = [Guest.find(params[:guest_id]).name, Guest.find(params[:guest_choice][:choices].first).name, Guest.find(params[:guest_choice][:choices].second).name]
+    @guest
     if @guest_choice.update(guest_choice_params)
       redirect_to guest_guest_choices_path(@guest)
     else

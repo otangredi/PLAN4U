@@ -7,10 +7,10 @@ class GuestsController < ApplicationController
     @guests = Guest.all
     @event = Event.find(params[:event_id])
 
-    if params[:query].nil?
-      @guests = Guest.all
-    else
+    if params[:query].present?
       @guests = Guest.search_by_name(params[:query])
+    else
+      @guests = Guest.all
     end
   end
 
@@ -51,10 +51,9 @@ class GuestsController < ApplicationController
     redirect_to event_guests_path(@guest.event)
   end
 
-  # this file location will need to change depending on how file is received
-  # incomplete, need frontend first
   def import_guests_from_file
-    guest_list = CSV.read(File.join(Dir.pwd, '/app/assets/demo_guestlist/guestlist.csv'))
+    puts file_params
+    guest_list = CSV.read(file_params)
 
     guest_list[1..].each do |guest|
       Guest.create!(
@@ -78,15 +77,11 @@ class GuestsController < ApplicationController
     @guest = Guest.find(params[:id])
   end
 
+  def file_params
+    params.require(:file)
+  end
+
   def guest_params
     params.require(:guest).permit(:name, :relationship, :status, :email)
   end
 end
-
-# Event.create!(
-#   date: Date.today,
-#   venue: "Le Mont Blanc",
-#   partner_name: "Anthony",
-#   user_id: 1,
-#   name: "Wedding"
-# )
