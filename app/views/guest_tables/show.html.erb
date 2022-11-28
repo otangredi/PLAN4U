@@ -1,1 +1,18 @@
-<%= @seating.assigned_tables %>
+<div class="container" data-controller="select-table">
+  <div class="d-flex">
+    <div class="d-flex flex-column mb-3">
+      <% @table.tables.each_with_index do |table, index| %>
+        <div data-action='click->select-table#displayTable' id="<%= index + 1 %>" class="rounded-circle bg-white" style="width: 50px; height: 50px;"><%= index+1 %></div>
+      <% end %>
+    </div>
+    <div class="">
+      <div id="big-circle" class="circle big">
+        <% @table.tables.each_with_index do |table, index| %>
+          <% table.each do |t| %>
+          <div id="<%= index + 1 %>" data-select-table-target='table' class="d-none circle circle_<%= index + 1 %>"><div><%= t %></div></div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
