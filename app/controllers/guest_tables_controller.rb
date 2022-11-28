@@ -24,15 +24,21 @@ class GuestTablesController < ApplicationController
     @event = Event.find(params[:event_id])
     @table = GuestTable.find(params[:id])
     @guest_choices = @event.guest_choices
-    guests = Guest.all.map { |g| g.name }
-    connection_1 = [GuestChoice.all.map do |guest_choice|
-                    {people: guest_choice.choices, weight: 2}
+    guests = @event.guests.all.map { |g| g.name }
+    connection_1 = [@event.guests.all.map do |guest|
+                    {people: guest.guest_choice.choices - [guest.guest_choice.choices.last], weight: 6}
                     end ]
-    connection_2 = [GuestChoice.all.map do |guest_choice|
-                    {people: guests - guest_choice.choices + [guest_choice.choices.first], weight: 1}
+    connection_2 = [@event.guests.all.map do |guest|
+                    {people: guests - guest.guest_choice.choices + [guest.guest_choice.choices.last] + [guest.guest_choice.choices.first], weight: 1}
                     end ]
-    connections = connection_1.flatten + connection_2.flatten
-    tables = [5, @table.num_of_seats]
+    connection_3 = [{people: @event.guests.where(relationship: "Family_B").map { |g| g.name }, weight: 5}]
+    connection_4 = [{people: @event.guests.where(relationship: "Family_G").map { |g| g.name }, weight: 5}]
+    connection_5 = [{people: @event.guests.where(relationship: "Friend_B").map { |g| g.name }, weight: 5}]
+    connection_6 = [{people: @event.guests.where(relationship: "Friend_G").map { |g| g.name }, weight: 5}]
+    connection_7 = [{people: guests, weight: 1}]
+
+    connections = connection_1.flatten + connection_2.flatten + connection_3 + connection_4 + connection_5 + connection_6 + connection_7
+    tables = [3, 20]
     @seating = ORTools::Seating.new(connections: connections.flatten, tables: tables)
   end
 
