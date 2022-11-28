@@ -66,6 +66,11 @@ class GuestsController < ApplicationController
     redirect_to event_guests_path(Event.first)
   end
 
+  def send_evite
+    EviteMailer.with(user: current_user).welcome_email.deliver_later
+    redirect_to event_guests_path(Event.first)
+  end
+
   private
 
   def set_guest
