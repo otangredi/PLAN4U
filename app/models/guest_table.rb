@@ -1,4 +1,4 @@
 class GuestTable < ApplicationRecord
-  belongs_to :event, dependent: :destroy
-  has_many :guest_seats
+  belongs_to :event
+  has_many :guest_seats, dependent: :destroy
 end

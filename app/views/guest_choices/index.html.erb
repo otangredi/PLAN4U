@@ -1,14 +1,2 @@
-<h1>GuestChoices#index</h1>
-
-<%= form_with url: guest_choices_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find your invitation card"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-
-<% if @guest.present? %>
-  <%= @guest.first.name %>
-<% end %>
+<p>guest_choice#index</p>
+<h1>Thank you for your RSVP</h1>

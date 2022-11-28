@@ -10,18 +10,30 @@ class GuestTablesController < ApplicationController
   end
 
   def create
-    quantity = params[:quantity][:quantity].to_i
-    quantity.times do
-      new
-      @table = GuestTable.new
-      @table.event = Event.find(params[:event_id])
-      if @table.save
-
-      else
-        render :new, status: :unprocessable_entity
-      end
+    @event = Event.find(params[:event_id])
+    @table = GuestTable.new(table_params)
+    @table.event = @event
+    if @table.save!
+      redirect_to event_guest_table_path(@event, @table)
+    else
+      render :new, status: :unprocessable_entity
     end
-    redirect_back_or_to '/', allow_other_host: false
+  end
+
+  def show
+    @event = Event.find(params[:event_id])
+    @table = GuestTable.find(params[:id])
+    @guest_choices = @event.guest_choices
+    guests = Guest.all.map { |g| g.name }
+    connection_1 = [GuestChoice.all.map do |guest_choice|
+                    {people: guest_choice.choices, weight: 2}
+                    end ]
+    connection_2 = [GuestChoice.all.map do |guest_choice|
+                    {people: guests - guest_choice.choices + [guest_choice.choices.first], weight: 1}
+                    end ]
+    connections = connection_1.flatten + connection_2.flatten
+    tables = [5, @table.num_of_seats]
+    @seating = ORTools::Seating.new(connections: connections.flatten, tables: tables)
   end
 
   def destroy
@@ -36,6 +48,6 @@ class GuestTablesController < ApplicationController
   end
 
   def table_params
-    params.require(:guest_table).permit
+    params.require(:guest_table).permit(:num_of_seats)
   end
 end

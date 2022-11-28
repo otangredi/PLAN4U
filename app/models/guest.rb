@@ -1,7 +1,7 @@
 class Guest < ApplicationRecord
-  belongs_to :event, dependent: :destroy
-  has_one :guest_seat
-  has_one :guest_choice
+  belongs_to :event
+  has_one :guest_seat, dependent: :destroy
+  has_one :guest_choice, dependent: :destroy
   validates :status, presence: true
 
   include PgSearch::Model
