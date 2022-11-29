@@ -1,7 +1,10 @@
 <div id="selected_evite_1" class="container d-flex h-100 align-items-center justify-content-center">
   <div class="align-self-center">
-    <p class="text-center"><%= current_user.first_name %> & <%= @event.partner_name %></p>
-    <p class="text-center"><%= @event.date %></p>
-    <p class="text-center"><%= @event.venue %></p>
+    <h1 class="text-center"><%= current_user.first_name %> & <%= @event.partner_name %></h1>
+    <small><p class="text-center">Request the pleasure of your company <br>at the ceremony of their wedding</p></small>
+    <p class="text-center"><strong><%= @event.date %></strong> | <strong><%= @event.venue %></strong></p>
+    <p class="text-center">please <strong>RSVP</strong> by <strong><%= @event.date.prev_month(1) %></strong></p>
+    <small><p class="text-center">We Really look forward to your presence</p></small>
+    <small><p class="text-center">Reception to follow</p></small>
   </div>
 </div>
