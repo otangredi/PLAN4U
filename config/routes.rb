@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   get '/events/:event_id/rsvp', to: 'guest_choices#find_rsvp', as: :find_rsvp
   patch '/guest_choices/:id/:status/attendance', to: "guest_choices#attendance", as: :attendance
   get '/events/:event_id/send_all_evite', to: "guests#send_all_evite", as: :send_all_evite
+  get '/events/:event_id/:id/send_one_evite', to: "guests#send_one_evite", as: :send_one_evite
 end

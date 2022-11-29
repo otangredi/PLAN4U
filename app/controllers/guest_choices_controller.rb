@@ -22,6 +22,7 @@ class GuestChoicesController < ApplicationController
     @guest = Guest.find(params[:guest_id])
     @guest_choice = GuestChoice.new
     @guest_choice.guest = @guest
+    raise
     if @guest_choice.save!
       redirect_to edit_guest_guest_choice_path(@guest, @guest_choice)
     end
