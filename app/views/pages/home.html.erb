@@ -3,7 +3,7 @@
     <div class="col-6">
       <div class="m-3 ps-4">
         <%= image_tag "plan_for_you_logo.png", class: "", width: 230, height: 61 %>
-        <div class="">
+        <div class="landing-page-text">
           <% if user_signed_in? %>
             <% if current_user.events.any? %>
               <h1>Welcome, <%= current_user.first_name %> <br>
