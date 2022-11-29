@@ -11,7 +11,7 @@
       <div id="selected_evite_3"data-select-evite-target='evite'><%= render "evite_template_3"%></div>
     </div>
     <div class="">
-      <%= form_with model: @e_vite, url: create_e_vite_path(@event.id), data: { behavior: "autosave" }, method: :post do |form| %>
+      <%= form_with model: @e_vite, url: create_e_vite_path(@event), data: { behavior: "autosave" }, method: :post do |form| %>
         <%= form.text_field :template_id, class:'d-none', id:'input_choise'%>
         <%= form.submit value: 'Save'%>
       <% end %>

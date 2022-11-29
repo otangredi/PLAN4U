@@ -11,12 +11,26 @@ class EVitesController < ApplicationController
   end
 
   def create
-    @e_vite = EVite.new(e_vite_params)
-    @e_vite.event_id = params[:event_id]
-    if @e_vite.save
-      redirect_to events_path
+    if EVite.all.empty?
+      @e_vite = EVite.new(e_vite_params)
+      @e_vite.event_id = params[:event_id]
+      if @e_vite.save
+        redirect_to events_path, notice: "E-vite was successfully create."
+      else
+        render :new, status: :unprocessable_entity
+      end
     else
-      render :new, status: :unprocessable_entity
+      update
+    end
+  end
+
+  def update
+    @event = Event.find(params[:event_id])
+    @e_vite = @event.e_vite
+    if @e_vite.update(e_vite_params)
+      redirect_to events_path, notice: "E-vite was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 

@@ -1,4 +1,5 @@
 
+<div id=<%= @event.e_vite.template_id %> ><%= render "evite_template_1"%></div>
 
 <button id="btn-confirm" class="btn"><%= link_to "Attending", attendance_path(@guest, 1), data: { 'turbo-method': :patch }%></button>
 <button class="btn"><%= link_to "Decline", attendance_path(@guest, 2), data: { 'turbo-method': :patch }%></button>
