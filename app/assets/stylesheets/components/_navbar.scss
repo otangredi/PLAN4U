@@ -44,6 +44,7 @@ nav.stroke ul li a:after {
   color: transparent;
   background: #aaa;
   height: 1px;
+}
 
 .navbar-lewagon .navbar-brand img {
   width: 190px;
@@ -77,11 +78,13 @@ nav ul li a {
   text-transform: uppercase;
   margin: 0 10px;
 }
+
 nav ul li a,
 nav ul li a:after,
 nav ul li a:before {
   transition: all .5s;
 }
+
 nav ul li a:hover {
   color: #555;
 }
