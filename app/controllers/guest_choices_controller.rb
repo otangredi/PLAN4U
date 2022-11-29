@@ -12,6 +12,8 @@ class GuestChoicesController < ApplicationController
   end
 
   def new
+    @user = current_user
+    @event = @user.events.first
     @guest = Guest.find(params[:guest_id])
     @guest_choice = GuestChoice.new
   end
