@@ -286,6 +286,7 @@ DEPENDENCIES
   font-awesome-sass (~> 6.1)
   jbuilder
   jsbundling-rails
+  mail (~> 2.7)
   or-tools
   pg (~> 1.1)
   pg_search
