@@ -1,8 +1,8 @@
 class EVitesController < ApplicationController
   before_action :set_e_vite, only: %i[show edit update destroy]
   def index
-    @e_vites = EVite.all
     @event = Event.find(params[:event_id])
+    @e_vites = EVite.find(@event.e_vites)
   end
 
   def new
@@ -11,7 +11,10 @@ class EVitesController < ApplicationController
   end
 
   def create
-    if EVite.all.empty?
+    @event = Event.find(params[:event_id])
+    if @event.e_vite.present?
+      update
+    else
       @e_vite = EVite.new(e_vite_params)
       @e_vite.event_id = params[:event_id]
       if @e_vite.save
@@ -19,8 +22,6 @@ class EVitesController < ApplicationController
       else
         render :new, status: :unprocessable_entity
       end
-    else
-      update
     end
   end
 
