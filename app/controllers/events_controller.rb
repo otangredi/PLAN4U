@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: :show
+  skip_before_action :verify_authenticity_token, only: [:change_value] # we need to haddle authentication from frontend
 
   def index
     @event = current_user.events.first
@@ -22,6 +23,19 @@ class EventsController < ApplicationController
   end
 
   def show
+  end
+
+  def change_value
+    case checkbox_params['name']
+    when 'guest_list'
+      current_user.update(guest_list: !current_user.guest_list)
+    when 'design_cards'
+      current_user.update(design_cards: !current_user.design_cards)
+    when 'send_cards'
+      current_user.update(send_cards: !current_user.send_cards)
+    end
+
+    render json: { message: "#{checkbox_params['name']} updated" }, status: 200
   end
 
   private
@@ -48,5 +62,9 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:partner_name, :venue, :date, :name)
+  end
+
+  def checkbox_params
+    params.require(:event).permit(:name)
   end
 end
