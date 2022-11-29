@@ -1,6 +1,7 @@
 <p>edit</p>
-
-<%= simple_form_for([@guest, @guest_choice]) do |f| %>
-<%= f.input :choices, as: :check_boxes, collection: @guests.where(relationship: @guest.relationship), include_hidden: false %>
-<%= f.submit %>
-<% end %>
+<div class="container">
+  <%= simple_form_for([@guest, @guest_choice]) do |f| %>
+  <%= f.input :choices, as: :check_boxes, collection: @guests.where(relationship: @guest.relationship), include_hidden: false %>
+  <%= f.submit %>
+  <% end %>
+</div>
