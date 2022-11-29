@@ -58,7 +58,7 @@ class GuestTablesController < ApplicationController
   private
 
   def set_table
-    @table = table.find(params[:id])
+    @table = GuestTable.find(params[:id])
   end
 
   def table_params

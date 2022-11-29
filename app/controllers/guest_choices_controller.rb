@@ -1,6 +1,10 @@
 class GuestChoicesController < ApplicationController
   skip_before_action :authenticate_user!
 
+  def rsvp_home
+    @event = Event.find(params[:event_id])
+  end
+
   def find_rsvp
     @user = current_user
     @event = @user.events.first
