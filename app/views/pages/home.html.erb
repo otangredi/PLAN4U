@@ -1,13 +1,34 @@
-<% if current_user.present? %>
-  <h1>Welcome, <%= current_user.first_name %> <br>
-  <%= current_user.last_name %>!</h1>
-  <h5>You still have not created your event. <br>
-  Please create your event to see have <br>
-  Plan For You can help you with.</h5>
-  <%= link_to "Create an Event", new_event_path, "data-controller": "turbo", class: "btn btn-primary" %>
-<% else %>
-  <h1>Automated, Stress-Free<br>
-  Seating Chart Generator</h1>
-  <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
-  <%= link_to "Get Started", new_user_registration_path, class: "btn btn-primary" %>
-<% end %>
+<div class="home-page-container">
+  <div class="row">
+    <div class="col-6">
+      <div class="m-3 ps-4">
+        <%= image_tag "plan_for_you_logo.png", class: "", width: 230, height: 61 %>
+        <div class="">
+          <% if user_signed_in? %>
+            <% if current_user.events.any? %>
+              <h1>Welcome, <%= current_user.first_name %> <br>
+              <%= current_user.last_name %>!</h1>
+              <%= link_to "My Event", events_path, class: "btn btn-primary" %>
+            <% else %>
+              <h1>Welcome, <%= current_user.first_name %> <br>
+              <%= current_user.last_name %>!</h1>
+              <h5>You still have not created your event. <br>
+              Please create your event to see have <br>
+              Plan For You can help you with.</h5>
+              <%= link_to "Create an Event", new_event_path, "data-controller": "turbo", class: "btn btn-primary" %>
+            <% end %>
+          <% else %>
+            <h1>Automated, Stress-Free<br>
+            Seating Chart Generator</h1>
+            <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+            <%= link_to "Get Started", new_user_registration_path, class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <%= image_tag "landing_page.png", class: 'landing-page' %>
+    </div>
+  </div>
+</div>

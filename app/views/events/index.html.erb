@@ -6,14 +6,24 @@
       <h1>Only <%= (@event.date - Date.today).to_i %> days to go!</h1>
     </div>
 
-    <div class="plannig_check col-5 bg-white ml-2">
-      <div class=""></div>
+    <div class="plannig_check col-5 bg-white ml-2" data-controller="checkbox">
       <div class="d-flex flex-column">
-      <h3 class="p-3 mb-3">PLANNING CHECKLIST</h3>
-        <div class="item mt-5 mb-3"><input class="form-check-input" type="checkbox" value="" id="Create_your_event"> Create your event</div>
-        <div class="item mb-3"><input class="form-check-input" type="checkbox" value="" id="Create_your_guest_list"> Create your guest list</div>
-        <div class="item mb-3"><input class="form-check-input" type="checkbox" value="" id="Design_your_invitation_card"> Design your invitation card</div>
-        <div class="item mb-3"><input class="form-check-input" type="checkbox" value="" id="Send_your_invitation_card"> Send your invitation card</div>
+        <h3 class="p-3 mb-3">PLANNING CHECKLIST</h3>
+        <div class="item mt-5 mb-3">
+          <input class="form-check-input" type="checkbox" value="" checked id="Create_your_event"> Create your event
+        </div>
+        <div class="item mb-3">
+          <%= check_box_tag 'guest_list', current_user.guest_list, current_user.guest_list, data: {action: 'click->checkbox#changeValue'} %>
+          <%= label_tag 'guest_list', 'Create your guest list' %>
+        </div>
+        <div class="item mb-3">
+          <%= check_box_tag 'design_cards', current_user.design_cards, current_user.design_cards, data: {action: 'click->checkbox#changeValue'} %>
+          <%= label_tag 'design_cards', 'Design your invitation card' %>
+        </div>
+        <div class="item mb-3">
+          <%= check_box_tag 'send_cards', current_user.send_cards, current_user.send_cards, data: {action: 'click->checkbox#changeValue'} %>
+          <%= label_tag 'send_cards', 'Send your invitation card' %>
+        </div>
       </div>
     </div>
   </div>
@@ -36,3 +46,6 @@
     </div>
   </div>
 </div>
+
+
+<%# value="<%= current_user.guest_list ? "checked" : "unchecked" %>

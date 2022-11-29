@@ -1,0 +1,50 @@
+.circle {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(200, 200, 200);
+  display: inline-block;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.circle.big {
+  width: 320px;
+  height: 320px;
+  background-color: rgb(200, 200, 200);
+  margin: 200px;
+}
+
+.circle_0 {
+  left: -29px;
+  top: -88px;
+}
+
+.circle_1 {
+  top: -93px;
+  left: 224px;
+}
+
+.circle_2 {
+  right: -122px;
+  top: 167px;
+}
+
+
+.circle_3 {
+  left: -113px;
+  bottom: 27px;
+}
+
+.circle_4 {
+  bottom: -112px;
+  left: 110px;
+}
+
+.circle_5 {
+  right: -25px;
+  bottom: -25px;
+}
