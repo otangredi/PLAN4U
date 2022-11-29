@@ -8,8 +8,7 @@
       %>
       <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
-
-    <div class="m-4"><%= link_to 'Send e-vite', send_evite_path(@event), class: "index-link" %></div>
+    <div class="m-4"><%= link_to 'Send e-vite', send_all_evite_path(@event), class: "index-link" %></div>
 
     <%= render 'form', guest: @guest %>
 
