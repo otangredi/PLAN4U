@@ -1,14 +1,24 @@
-<h1>GuestChoices#rsvp</h1>
+<div class="container mt-3">
+  <h1 class="text-center"><%= @user.first_name %> & <%= @event.partner_name %> <%= @event.name %></h1>
+  <p class="text-center">If you’re responding for you and a guest (or your family),
+      you’ll be able to RSVP for your entire group. </p>
+  <div class="form_select_name">
+    <%= form_with url: find_rsvp_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find your invitation card"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 
-<%= form_with url: find_rsvp_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find your invitation card"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-
-<% if @guest.present? %>
-  <%= link_to @guest.name, new_guest_guest_choice_path(@guest) %>
-<% end %>
+  <% if @guest.present? %>
+    <div class="cards d-flex justify-content-center">
+      <div class="card">
+        <h5 class="card-title"> <%=@guest.name %></h5>
+        <button class="btn btn-primary"><%= link_to "RSVP", new_guest_guest_choice_path(@guest) %></a>
+      </div>
+    </div>
+  <% end %>
+</div>
