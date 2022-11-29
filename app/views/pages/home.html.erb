@@ -1,9 +1,9 @@
 <div class="home-page-container">
-  <div class="row">
-    <div class="col-6">
-      <div class="m-3 ps-4">
+  <div class="row d-flex align-items-stretch">
+    <div class="col-4 d-flex align-items-stretch">
+      <div class="col-12 m-3 ps-4 d-flex flex-column">
         <%= image_tag "plan_for_you_logo.png", class: "", width: 230, height: 61 %>
-        <div class="landing-page-text">
+        <div class="landing-page-text flex-fill d-flex flex-column justify-content-center align-items-start">
           <% if user_signed_in? %>
             <% if current_user.events.any? %>
               <h1>Welcome, <%= current_user.first_name %> <br>
@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <div class="col-6">
+    <div class="col-8">
       <%= image_tag "landing_page.png", class: 'landing-page' %>
     </div>
   </div>
