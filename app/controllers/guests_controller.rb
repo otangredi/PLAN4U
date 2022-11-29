@@ -4,13 +4,13 @@ class GuestsController < ApplicationController
   before_action :set_guest, only: %i[show edit update destroy]
 
   def index
-    @guests = Guest.all
     @event = Event.find(params[:event_id])
+    @guests = @event.guests.all if @event.guests.present?
 
     if params[:query].present?
-      @guests = Guest.search_by_name(params[:query])
+      @guests = @event.guests.search_by_name(params[:query])
     else
-      @guests = Guest.all
+      @guests = @event.guests.all
     end
   end
 
