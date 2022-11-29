@@ -1,7 +1,7 @@
 class GuestsController < ApplicationController
   require 'csv'
 
-  before_action :set_guest, only: %i[show edit update destroy send_one_evite send_all_evite]
+  before_action :set_guest, only: %i[show edit update destroy]
 
   def index
     @event = Event.find(params[:event_id])

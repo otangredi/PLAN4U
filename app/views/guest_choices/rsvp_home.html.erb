@@ -1,2 +1,2 @@
-<div id=<%= @event.e_vite.template_id %> class="" ><%= render "evite_template_1" %></div>
+<div id=<%= @event.e_vite.template_id %> class="" ><%= render "#{@event.e_vite.template_id}" %></div>
 <%= link_to "RSVP", find_rsvp_path(@event) %>
