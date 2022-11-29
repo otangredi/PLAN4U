@@ -9,7 +9,8 @@ export default class extends Controller {
 
   displayTable(event) {
     event.preventDefault()
-    console.log(this.tableTargets[event.target.id - 1])
+    // console.log(this.tableTargets[event.target.id - 1])
+    console.log(this.tableTargets)
     this.tableTargets[event.target.id - 1].classList.toggle("d-none")
   }
 }
