@@ -1,6 +1,6 @@
 <div class="container d-flex h-100 justify-content-center mt-5">
   <div class="row align-self-center flex-column mb-3">
-    <div id=<%= @event.e_vite.template_id %> class="" ><%= render "evite_template_1"%></div>
+    <div id=<%= @event.e_vite.template_id %> class="" ><%= render "#{@event.e_vite.template_id}" %></div>
     <div class="d-flex justify-content-center">
       <button id="btn-confirm" class="btn"><%= link_to "Attending", attendance_path(@guest, 2), data: { 'turbo-method': :patch }%></button>
       <button class="btn"><%= link_to "Decline", attendance_path(@guest, 3), data: { 'turbo-method': :patch }%></button>
