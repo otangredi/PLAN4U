@@ -1,15 +1,16 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <% if user_signed_in? %>
-      <%= link_to events_path, class: "navbar-brand" do %>
-      <%= image_tag "plan_for_you_logo.png", width: 230, height: 61 %>
+
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag "plan_for_you_logo.png", width: 230, height: 61 %>
       <% end %>
+
     <% else %>
       <%= link_to '/', class: "navbar-brand" do %>
       <%= image_tag "plan_for_you_logo.png", width: 230, height: 61 %>
       <% end %>
     <% end %>
-
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -32,9 +33,7 @@
           <li id="dropdown" class="nav-item dropdown">
             <%= image_tag "navmenu.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "My Event", events_path, class: "dropdown-item" %>
-              <%#= link_to "RSVP", guest_choices_index_path, class: "dropdown-item" %>
-              <%= link_to "Account Settings", "#", class: "dropdown-item" %>
+              <% if current_user.events.any? %> <%= link_to "My Event", events_path, class: "dropdown-item" %> <% end %>
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>
