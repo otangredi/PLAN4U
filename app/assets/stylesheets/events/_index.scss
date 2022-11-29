@@ -6,18 +6,28 @@
 .upper-container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 .photo-container {
   background-image: url('landing_page.png') ;
-  width: 500px;
-  height: 400px;
+  width: 525px;
+  height: 300px;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  h1, h5 {
+    font-family: 'Pinyon Script', cursive;
+    align-self: center;
+  }
+  display: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .checklist-container{
   background-color: white;
-  width: 500px;
-  height: 400px;
+  width: 525px;
+  height: 300px;
 }

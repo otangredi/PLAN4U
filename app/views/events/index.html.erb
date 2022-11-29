@@ -2,8 +2,8 @@
   <div class="upper-container">
     <div class="photo-container">
       <h1><%= current_user.first_name %> & <%= @event.partner_name %></h1>
-      <h1><%= @event.date.strftime("%B %e, %Y") %></h1>
-      <h1>Only <%= (@event.date - Date.today).to_i %> days to go!</h1>
+      <h5><%= @event.date.strftime("%B %e, %Y") %></h5>
+      <p>Only <%= (@event.date - Date.today).to_i %> days to go!</p>
     </div>
 
     <div class="checklist-container" data-controller="checkbox">
