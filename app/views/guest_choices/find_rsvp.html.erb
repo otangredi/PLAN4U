@@ -16,7 +16,7 @@
 
     <% if @guests.present? %>
       <% @guests.each do |guest|%>
-        <%= link_to guest.name, new_guest_guest_choice_path(guest), class: "btn btn-4u" %>
+        <%= link_to guest.name, new_guest_choice_path(@event, guest), class: "btn btn-4u" %>
       <% end %>
     <% end %>
   </div>
