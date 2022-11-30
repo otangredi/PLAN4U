@@ -19,6 +19,6 @@ Rails.application.routes.draw do
   get '/events/:event_id/send_all_evite', to: "guests#send_all_evite", as: :send_all_evite
   get '/events/:event_id/:id/send_one_evite', to: "guests#send_one_evite", as: :send_one_evite
   post '/checklist', to: 'events#change_value', as: :checklist
-  get '/guests/:guest_id/:event_id/guest_choices', to: "guest_choices#new", as: :new_guest_choice
+  get '/guests/:event_id/:guest_id/guest_choices', to: "guest_choices#new", as: :new_guest_choice
 
 end
