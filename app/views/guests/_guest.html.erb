@@ -5,10 +5,12 @@
     <div class="col"><%= guest.email %></div>
     <div class="col"><%= guest.status %></div>
     <% if action_name != "show" %>
-      <div class="col">
-        <button aria-label="Edit guest" data-action='click->edit-guest#displayForm'>Edit</button>
-        <%= link_to "Delete", event_guest_path(event_id: guest.event_id, id: guest.id), "data-turbo-method": "delete", "data-turbo-confirm": "Are you sure you want to remove #{guest.name} from the guest list?" %>
-        <%= link_to 'Send e-vite', send_one_evite_path(event_id: guest.event_id, id: guest.id)%>
+
+      <div class="col guest-icons">
+        <a class="fa-regular fa-pen-to-square" aria-label="Edit guest" data-action='click->edit-guest#displayForm'></a>
+        <%= link_to event_guest_path(event_id: guest.event_id, id: guest.id), "data-turbo-method": "delete", "data-turbo-confirm": "Are you sure you want to remove #{guest.name} from the guest list?" do %><i class="fa-solid fa-trash"></i><% end %>
+        <%= link_to send_one_evite_path(event_id: guest.event_id, id: guest.id) do %><i class="fa-regular fa-envelope"></i><% end %>
+
       </div>
     <% end %>
   </div>
@@ -16,7 +18,7 @@
     <%= simple_form_for([@event, guest],
                         html: {
                           class: guest.errors.any? ? "" : "d-none",
-                          data: { edit_guest_target: 'form', action: "submit->edit-guest#update" }
+                          data: { edit_guest_target: "form", action: "submit->edit-guest#update" }
                         }) do |f| %>
       <div class="row">
         <div class="col">
