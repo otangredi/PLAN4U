@@ -40,7 +40,7 @@ class GuestChoicesController < ApplicationController
     case @guest.status
     when "Attending"
       create(@guest)
-    when "Not_Attending"
+    when "Not Attending"
       redirect_to guest_guest_choices_path(@guest)
     else
       "Error: choice has an invalid value"
