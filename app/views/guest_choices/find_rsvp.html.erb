@@ -13,12 +13,14 @@
     <% end %>
   </div>
 
-  <% if @guest.present? %>
+  <% if @guests.present? %>
     <div class="cards d-flex justify-content-center">
+    <% @guests.each do |guest|%>
       <div class="card">
-        <h5 class="card-title"> <%=@guest.name %></h5>
-        <button class="btn btn-primary"><%= link_to "RSVP", new_guest_guest_choice_path(@guest) %></a>
+        <h5 class="card-title"> <%=guest.name %></h5>
+        <button class="btn btn-primary"><%= link_to "RSVP", new_guest_guest_choice_path(guest) %></a>
       </div>
     </div>
+    <% end %>
   <% end %>
 </div>

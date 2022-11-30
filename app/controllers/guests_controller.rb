@@ -69,7 +69,7 @@ class GuestsController < ApplicationController
   def send_all_evite
     @event = current_user.events.first
     @template_id = @event.e_vite.template_id
-    @guests = Guest.all
+    @guests = @event.guests
     @guests.each do |guest|
       EviteMailer.with(user: current_user, event: @event, guest: guest).welcome_email.deliver_now
       set_status(guest)
