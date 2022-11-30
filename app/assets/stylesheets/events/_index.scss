@@ -10,24 +10,57 @@
 }
 
 .photo-container {
-  background-image: url('landing_page.png') ;
+  background-image: url('dashboard_pic.jpg');
   width: 525px;
   height: 300px;
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
   color: white;
-  h1, h5 {
+  h1 {
     font-family: 'Pinyon Script', cursive;
     align-self: center;
   }
   display: center;
   align-items: center;
   justify-content: center;
+  border-radius: 20px;
 }
 
 .checklist-container{
   background-color: white;
   width: 525px;
   height: 300px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.item {
+  margin-bottom: 15px;
+}
+
+.planning-title {
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+.rsvp-summary-container {
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.rsvp-title {
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+.number {
+  font-size: 20px;
+  width: 100px;
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 5px;
+}
+
+.text {
+  width: 100px;
 }
