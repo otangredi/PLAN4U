@@ -67,6 +67,7 @@ class GuestChoicesController < ApplicationController
   private
 
   def guest_choice_params
+
     params.require(:guest_choice).permit(choices: [])
   end
 end

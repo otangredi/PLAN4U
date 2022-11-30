@@ -5,28 +5,89 @@
 }
 
 .guest-container {
-  width: 1200px;
+  padding-top: 40px;
+  width: 1100px;
   display: flex;
   justify-content: center;
   margin: 0 auto;
 }
 
-.btn-upload {
-  border-radius: 20px;
-  border: 1px solid lightgray;
-  background-color: white;
-  color: #747373;
+.each-guest-container {
+  padding-left: 22px;
 }
 
-.btn-upload:hover {
-  background-color: #747373;
-  color: white;
+.new-guest {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+
+  .btn {
+    background-color: black;
+    border-radius: 0px 20px 20px 0px;
+    color: white;
+
+    &:hover {
+      background-color: white;
+      animation: 0.3s;
+    }
+  }
+}
+
+.guest_name {
+  input {
+    border-radius: 20px 0px 0px 20px;
+    border-right: none;
+  }
+}
+
+.guest_relationship {
+  input {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
+}
+
+.guest_email {
+  input {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
+}
+
+
+.guest_name,
+.guest_relationship,
+.guest_email {
+  margin-bottom: 0 !important;
+
+  input {
+    background-color: white;
+  }
+}
+
+.searchbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 10px 10px;
+}
+
+.dropdown {
+  margin-left: 10px;
+  width: 45px;
+}
+
+.fa-solid {
+  font-size: 20px;
 }
 
 .guest-search {
-  width: 800px;
-  border-radius: 20px;
+  width: 300px;
   border: 1px solid lightgray;
+  border-radius: 20px;
   background-color: white;
 }
 
@@ -36,14 +97,71 @@
   margin: 3px 10px;
 }
 
+.guestlist-container {
+  width: 1010px;
+  margin: 0 auto;
+}
+
+.each-guest {
+  border-bottom: 0.8px solid lightgray;
+  padding: 16px 0px;
+  padding-left: 10px;
+}
+
+.guest-icons-container {
+  width: 100px;
+}
+
 .guest-icons {
-  text-decoration: none;
-  color: black;
   display: flex;
+  position: absolute;
   justify-content: center;
   align-items: center;
+  align-self: center;
+  justify-self: center;
+  text-decoration: none;
+  color: black;
+  transition: opacity ease-in 0.1s;
+  opacity: 0;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
   a {
     margin: 0px 8px;
     color: black;
+    font-size: 20px;
   }
+}
+
+.guest-icons-wrapper {
+  position: relative;
+  width: 60%;
+  height: 60%;
+}
+
+.guest-icons-wrapper:hover .dots {
+  opacity: 0;
+}
+
+
+.dots {
+  position: absolute;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 1;
+  transition: opacity ease-in 0.1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.guest-icons-wrapper:hover {
+}
+
+.guest-icons-wrapper:hover .guest-icons {
+  opacity: 1;
 }
