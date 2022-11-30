@@ -1,34 +1,52 @@
-<div class="container text-center my-3">
+<body id="guest">
+<div class="guest-container text-center my-3">
   <div>
-    <%= form_with url: event_guests_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Search guest"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
-    <div class="m-4">
-      <%= link_to send_all_evite_path(@event) do%>
+    <div class="m-4 d-flex justify-content-between">
+
+      <button type="button" class="btn btn-upload" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Import Spreadsheed</button>
+      <%= render 'upload', guest: @guest %>
+
+      <%= link_to send_all_evite_path(@event) do %>
         <%= image_tag "mail.png" %>
       <% end %>
+
+      <%= form_with url: event_guests_path, method: :get, class: "d-flex rounded" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control guest-search",
+          placeholder: "Search guest"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary d-none" %>
+      <% end %>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
     </div>
 
-    <%= render 'form', guest: @guest %>
 
 
-    <div class="mb-3"><%= render "new", event: @event, guest: Guest.new %></div>
 
     <div class="row">
-      <div class="col border-bottom mb-3"><strong>Name</strong></div>
-      <div class="col border-bottom mb-3"><strong>Relationship</strong></div>
-      <div class="col border-bottom mb-3"><strong>Email</strong></div>
-      <div class="col border-bottom mb-3"><strong>RSVP Status</strong></div>
-      <div class="col border-bottom mb-3"></div>
+      <div class="col mb-3"><strong>Name</strong></div>
+      <div class="col mb-3"><strong>Relationship</strong></div>
+      <div class="col mb-3"><strong>Email</strong></div>
+      <div class="col mb-3"><strong>RSVP Status</strong></div>
+      <div class="col mb-3"></div>
+      <div class="guest-border"></div>
+
+      <div class="mb-1"><%= render "new", event: @event, guest: Guest.new %></div>
 
       <% @guests.each do |guest| %>
-      <%= render "guest", guest: guest %>
+        <%= render "guest", guest: guest %>
       <% end %>
     </div>
   </div>
 </div>
+</body>

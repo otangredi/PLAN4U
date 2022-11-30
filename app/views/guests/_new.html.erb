@@ -13,6 +13,10 @@
     <%= inline_error_for(:email, guest) %>
   </div>
   <div class="col">
+    <%= f.input :status, class: "form-control rounded col", label: false, collection: Guest.statuses.keys, selected: 0 %>
+    <%= inline_error_for(:email, guest) %>
+  </div>
+  <div class="col">
     <%= f.submit class: "btn btn-primary col", label: false %>
   </div>
   </div>

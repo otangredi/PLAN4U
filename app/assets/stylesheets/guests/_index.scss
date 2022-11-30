@@ -1,0 +1,49 @@
+.guest-body {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.guest-container {
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.btn-upload {
+  border-radius: 20px;
+  border: 1px solid lightgray;
+  background-color: white;
+  color: #747373;
+}
+
+.btn-upload:hover {
+  background-color: #747373;
+  color: white;
+}
+
+.guest-search {
+  width: 800px;
+  border-radius: 20px;
+  border: 1px solid lightgray;
+  background-color: white;
+}
+
+.guest-border {
+  height: 5px;
+  border-bottom: 0.8px solid lightgray;
+  margin: 3px 10px;
+}
+
+.guest-icons {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    margin: 0px 8px;
+    color: black;
+  }
+}
