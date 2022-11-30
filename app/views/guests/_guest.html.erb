@@ -1,17 +1,21 @@
-<div data-controller="edit-guest">
+<div data-controller="edit-guest" class="each-guest-container">
   <div class="<%= 'd-none' if guest.errors.any? %> row" data-edit-guest-target="infos">
-    <div class="col"><%= guest.name %></div>
-    <div class="col"><%= guest.relationship %></div>
-    <div class="col"><%= guest.email %></div>
-    <div class="col"><%= guest.status %></div>
+    <div class="col each-guest"><%= guest.name %></div>
+    <div class="col each-guest"><%= guest.email %></div>
+    <div class="col each-guest"><%= guest.status %></div>
     <% if action_name != "show" %>
-
-      <div class="col guest-icons">
-        <a class="fa-regular fa-pen-to-square" aria-label="Edit guest" data-action='click->edit-guest#displayForm'></a>
-        <%= link_to event_guest_path(event_id: guest.event_id, id: guest.id), "data-turbo-method": "delete", "data-turbo-confirm": "Are you sure you want to remove #{guest.name} from the guest list?" do %><i class="fa-solid fa-trash"></i><% end %>
-        <%= link_to send_one_evite_path(event_id: guest.event_id, id: guest.id) do %><i class="fa-regular fa-envelope"></i><% end %>
-
+    <div class="col d-flex justify-content-center align-items-center guest-icons-container">
+      <div class="guest-icons-wrapper">
+        <div class="dots">
+          <i href="" class="fa-solid fa-ellipsis"></i>
+        </div>
+        <div class="guest-icons">
+          <a><i class="fa-regular fa-pen-to-square" aria-label="Edit guest" data-action='click->edit-guest#displayForm'></i></a>
+          <%= link_to event_guest_path(event_id: guest.event_id, id: guest.id), "data-turbo-method": "delete", "data-turbo-confirm": "Are you sure you want to remove #{guest.name} from the guest list?", "class": "delete-icon" do %><i class="fa-solid fa-trash"></i><% end %>
+          <%= link_to send_one_evite_path(event_id: guest.event_id, id: guest.id), "class": "send-icon" do %><i class="fa-regular fa-envelope"></i><% end %>
+        </div>
       </div>
+    </div>
     <% end %>
   </div>
 
