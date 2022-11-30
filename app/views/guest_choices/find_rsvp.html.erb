@@ -18,7 +18,7 @@
     <% @guests.each do |guest|%>
       <div class="card">
         <h5 class="card-title"> <%=guest.name %></h5>
-        <button class="btn btn-primary"><%= link_to "RSVP", new_guest_guest_choice_path(guest) %></a>
+        <button class="btn btn-primary"><%= link_to "RSVP", new_guest_choice_path(guest, @event) %></a>
       </div>
     </div>
     <% end %>

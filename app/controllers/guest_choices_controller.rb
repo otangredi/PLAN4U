@@ -6,8 +6,8 @@ class GuestChoicesController < ApplicationController
   end
 
   def find_rsvp
-    @user = current_user
-    @event = @user.events.first
+    @event = Event.find(params[:event_id])
+    @user = @event.user
     if params[:query].present?
       @guests = Guest.where("name ILIKE ? AND event_id = ?", "%#{params[:query]}%", "#{@event.id}")
     end
@@ -18,8 +18,8 @@ class GuestChoicesController < ApplicationController
   end
 
   def new
-    @user = current_user
-    @event = @user.events.first
+    @event = Event.find(params[:event_id])
+    @user = @event.user
     @guest = Guest.find(params[:guest_id])
     @guest_choice = GuestChoice.new
   end
@@ -67,6 +67,6 @@ class GuestChoicesController < ApplicationController
   private
 
   def guest_choice_params
-    params.require(:guest_choice).permit(:choices)
+    params.require(:guest_choice).permit(choices: [])
   end
 end

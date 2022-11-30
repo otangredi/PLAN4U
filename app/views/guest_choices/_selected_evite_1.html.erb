@@ -1,7 +1,7 @@
 <div id="selected_evite_1" class="container d-flex h-100 align-items-center justify-content-center">
   <div class="align-self-center">
     <p class="text-center">Together With Their Families</p>
-    <p id="names" class="text-center"><%= current_user.first_name %> <%= current_user.last_name %> & <%= @event.partner_name %><p>
+    <p id="names" class="text-center"><%= @event.user.first_name %> <%= @event.user.last_name %> & <%= @event.partner_name %><p>
     <p class="text-center">Invite you to their wedding</p>
     <p id="date" class="text-center"><%= @event.date.strftime("%B %e, %Y") %></p>
     <p class="text-center"><%= @event.venue %></p>
