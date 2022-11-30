@@ -44,6 +44,7 @@ class EventsController < ApplicationController
     @yes = 0
     @no = 0
     @awaiting = 0
+    @total = @event.guests.count
     @event.guests.each do |guest|
       case guest.status
       when "Attending"
