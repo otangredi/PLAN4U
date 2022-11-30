@@ -9,7 +9,7 @@ class GuestChoicesController < ApplicationController
     @user = current_user
     @event = @user.events.first
     if params[:query].present?
-      @guest = Guest.find_by("name ILIKE ?", "%#{params[:query]}%")
+      @guests = Guest.where("name ILIKE ? AND event_id = ?", "%#{params[:query]}%", "#{@event.id}")
     end
   end
 
