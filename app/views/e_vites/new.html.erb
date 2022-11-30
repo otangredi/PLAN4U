@@ -12,7 +12,7 @@
       <div class="d-flex justify-content-center mt-3">
         <%= form_with model: @e_vite, url: create_e_vite_path(@event), data: { behavior: "autosave" }, method: :post do |form| %>
           <%= form.text_field :template_id, class:'d-none', id:'input_choise'%>
-          <%= form.submit value: 'Save'%>
+          <%= form.submit value: 'Save', class: "btn btn-4u-black" %>
         <% end %>
       </div>
     </div>
