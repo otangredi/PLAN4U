@@ -1,6 +1,6 @@
 <body id="guest">
   <div class="rsvp-container mt-3">
-    <h1 class="text-center"><%= @user.first_name %> & <%= @event.partner_name %>'s <%= @event.name %></h1>
+    <h1 class="text-center"><%= @event.user.first_name %> & <%= @event.partner_name %>'s <%= @event.name %></h1>
     <p class="text-center">If you’re responding for you and a guest (or your family),
         you’ll be able to RSVP for your entire group. </p>
     <div class="form_select_name">

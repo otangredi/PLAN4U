@@ -1,6 +1,6 @@
 <div id="selected_evite_2" class="container d-flex h-100 align-items-center justify-content-center">
   <div class="align-self-center">
-    <p id="names" class="text-center"><%= current_user.first_name %> <%= current_user.last_name %><br>
+    <p id="names" class="text-center"><%= @event.user.first_name %> <%= @event.user.last_name %><br>
       & <br>
       <%= @event.partner_name %></p>
     <p id="text" class="text-center">Request the pleasure of your company at <br>
