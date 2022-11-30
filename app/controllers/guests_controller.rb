@@ -1,7 +1,7 @@
 class GuestsController < ApplicationController
   require 'csv'
 
-  before_action :set_guest, only: %i[show edit update destroy]
+  before_action :set_guest, only: %i[show edit update destroy send_one_evite]
 
   def index
     @event = Event.find(params[:event_id])
@@ -81,6 +81,7 @@ class GuestsController < ApplicationController
   def send_one_evite
     @event = current_user.events.first
     EviteMailer.with(user: current_user, event: @event, guest: @guest).welcome_email.deliver_now
+    set_status(@guest)
     redirect_back_or_to '/', allow_other_host: false, notice: "This e-vite was successfully send"
   end
 

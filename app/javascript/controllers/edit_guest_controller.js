@@ -6,9 +6,6 @@ export default class extends Controller {
 
   connect() {
     // console.log(this.formTarget);
-    // console.log(this.element);
-    // console.log("hi");
-
   }
 
   displayForm() {
