@@ -29,7 +29,7 @@
           <%= f.input :name, label: false, input_html: { class: 'edit-guest' } %>
         </div>
         <div class="col">
-          <%= f.input :relationship, label: false, input_html: { class: 'edit-guest' } %>
+          <%= f.input :relationship, collection: ["My Family", "Partner's Family", "My Friend", "Partner's Friend"], label: false, input_html: { class: 'edit-guest' } %>
         </div>
         <div class="col">
           <%= f.input :email, label: false, input_html: { class: 'edit-guest' } %>

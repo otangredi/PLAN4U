@@ -1,13 +1,17 @@
 <%= turbo_frame_tag :remote_modal, target: :_top do %>
   <div class="modal fade" data-controller="modal">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Your Event Details</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         <div class="modal-body">
-          <%= render "events/form", event: event %>
+          <div class="row">
+            <div class="col-4">
+              <h1>Tell us<br>about<br>your<br>event</h1>
+            </div>
+            <div class="col-8">
+              <%= render "events/form", event: event %>
+            </div>
+          </div>
         </div>
       </div>
     </div>

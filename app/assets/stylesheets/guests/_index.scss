@@ -87,6 +87,18 @@
     box-shadow: none;
     border-color: lightgray;
   }
+
+  .form-select:focus {
+    border-color: lightgray;
+    outline: 0;
+    box-shadow: none;
+  }
+
+  .form-select {
+    border-left: none;
+    border-right: none;
+    background-color: white;
+  }
 }
 
 .guest_status {

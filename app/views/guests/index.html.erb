@@ -31,28 +31,28 @@
     <div class="row guestlist-container">
       <div class="guest-group">
         <h2 class="group"><%= current_user.first_name %>'s Family</h2>
-        <% @guests.where(relationship: "Family_B").each do |guest| %>
+        <% @guests.where(relationship: "My Family").each do |guest| %>
           <%= render "guest", guest: guest %>
         <% end %>
       </div>
 
       <div class="guest-group">
-        <h2 class="group"><%= @event.partner_name %>'s Family</h2>
-        <% @guests.where(relationship: "Family_G").each do |guest| %>
+        <h2 class="group"><%= @event.partner_first_name %>'s Family</h2>
+        <% @guests.where(relationship: "Partner's Family").each do |guest| %>
           <%= render "guest", guest: guest %>
         <% end %>
       </div>
 
       <div class="guest-group">
         <h2 class="group"><%= current_user.first_name %>'s Friends</h2>
-        <% @guests.where(relationship: "Friend_B").each do |guest| %>
+        <% @guests.where(relationship: "My Friend").each do |guest| %>
           <%= render "guest", guest: guest %>
         <% end %>
       </div>
 
       <div class="guest-group">
-        <h2 class="group"><%= @event.partner_name %>'s Friends</h2>
-        <% @guests.where(relationship: "Friend_G").each do |guest| %>
+        <h2 class="group"><%= @event.partner_first_name %>'s Friends</h2>
+        <% @guests.where(relationship: "Partner's Friend").each do |guest| %>
           <%= render "guest", guest: guest %>
         <% end %>
       </div>

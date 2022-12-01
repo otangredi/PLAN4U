@@ -2,7 +2,7 @@
   <div class="new-guest">
       <%= f.input :name, class: "form-control new-guest-input col", label: false, placeholder: 'Name' %>
       <%= inline_error_for(:name, guest) %>
-      <%= f.input :relationship, class: "form-control new-guest-input col", label: false, placeholder: 'Relationship' %>
+      <%= f.input :relationship, collection: ["My Family", "Partner's Family", "My Friend", "Partner's Friend"], class: "form-control new-guest-input col", label: false, default: "Relationship" %>
       <%= inline_error_for(:relationship, guest) %>
       <%= f.input :email, class: "form-control new-guest-input col", label: false, placeholder: 'Email' %>
       <%= inline_error_for(:email, guest) %>

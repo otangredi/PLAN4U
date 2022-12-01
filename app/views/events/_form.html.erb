@@ -1,3 +1,4 @@
+
 <%= simple_form_for event do |f| %>
   <% if event.errors.any? %>
     <div style="color: red">
@@ -10,9 +11,10 @@
       </ul>
     </div>
   <% end %>
-  <div class="mb-3">
-    <%= f.label :partner_name, class: 'form-label' %>
-    <%= f.input :partner_name, class: 'form-control', label: false %>
+    <%= f.label :partner_first_name, class: 'form-label' %>
+  <div class="mb-3 d-flex">
+    <%= f.input :partner_first_name, class: 'form-control', label: false, placeholder: "First Name" %>
+    <%= f.input :partner_last_name, class: 'form-control', label: false %>
   </div>
 
   <div class="mb-3">
@@ -20,17 +22,14 @@
     <%= f.input :name, class: 'form-control', label: false %>
   </div>
 
-  <div class="mb-3">
+  <div class="mb-3 d-flex flex-column">
     <%= f.label :venue, class: 'form-label' %>
     <%= f.input :venue, class: 'form-control', label: false %>
-  </div>
-
-  <div class="mb-3">
     <%= f.label :date, class: 'form-label' %>
     <%= f.input :date, class: 'form-control', html5: true, label: false %>
   </div>
 
   <div class="actions">
-    <%= f.submit class: 'btn btn-primary' %>
+    <%= f.submit 'Submit', class: 'btn btn-4u' %>
   </div>
 <% end %>

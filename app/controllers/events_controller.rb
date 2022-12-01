@@ -62,7 +62,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:partner_name, :venue, :date, :name)
+    params.require(:event).permit(:partner_first_name, :partner_last_name, :venue, :date, :name)
   end
 
   def checkbox_params
