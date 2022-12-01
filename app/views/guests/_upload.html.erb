@@ -7,13 +7,9 @@
       </div>
       <div class="modal-body">
         <%= form_with(model: guest, url: guestlist_path, method: 'post') do |form| %>
-          <%= form.label :file %>
           <%= form.file_field :file %>
-          <%= form.submit %>
+          <%= form.submit class: "btn btn-4u" %>
         <% end %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
