@@ -15,9 +15,9 @@ namespace :guest_choices do
           puts "My Family"
           case guest.name
           when "Elena Zangari"
-            guest.guest_choice.choices = ["Elena Zangari", "Pasquale Tangredi", "Cathy Lopez"]
+            guest.guest_choice.choices = ["Elena Zangari", "Pasquale Tangredi", "Massimo Romeo"]
           when "Pasquale Tangredi"
-            guest.guest_choice.choices = ["Pasquale Tangredi", "Elena Zangari", "Cathy Lopez"]
+            guest.guest_choice.choices = ["Pasquale Tangredi", "Elena Zangari", "Chloe Tangredi"]
           when "Chloe Tangredi"
             guest.guest_choice.choices = ["Chloe Tangredi", "Josephine Gurreri", "Massimo Romeo"]
           when "Cathy Lopez"
@@ -26,10 +26,10 @@ namespace :guest_choices do
             guest.guest_choice.choices = ["Carmine Marcarella", "Selina Marcarella", "Ryan Fontes"]
           when "Selina Marcarella"
             guest.guest_choice.choices = ["Selina Marcarella", "Carmine Marcarella", "Ryan Fontes"]
-          when "Josephine Gurreri"
-            guest.guest_choice.choices = ["Josephine Gurreri", "Massimo Romeo", "Chloe Tangredi"]
+          # when "Josephine Gurreri"
+          #   guest.guest_choice.choices = ["Josephine Gurreri", "Massimo Romeo", "Chloe Tangredi"]
           when "Massimo Romeo"
-            guest.guest_choice.choices = ["Massimo Romeo", "Josephine Gurreri", "Chloe Tangredi"]
+            guest.guest_choice.choices = ["Massimo Romeo", "Josephine Gurreri", "Elena Zangari"]
           #when "Dominic Agnelli"
           #  guest.guest_choice.choices = ["Dominic Agnelli", "Massimo Romeo", "Chloe Tangredi"]
           when "Rick Saraceno"
