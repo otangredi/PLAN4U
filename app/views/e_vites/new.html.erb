@@ -1,20 +1,22 @@
-<div class="container" data-controller="select-evite">
-  <div class="row">
-    <div class="d-flex flex-column mb-3 col-3 align-self-center" id="column_template">
-      <div data-action='click->select-evite#displayEvite'><%= image_tag "e_vite_1.png", id: "e_vite_1"%></div>
-      <div data-action='click->select-evite#displayEvite'><%= image_tag "e_vite_2.png", id: "e_vite_2"%></div>
-      <div data-action='click->select-evite#displayEvite'><%= image_tag "e_vite_3.png", id: "e_vite_3"%></div>
-    </div>
-    <div class="row col-9 align-items-center flex-column mt-5">
-      <div id="selected_evite_1"data-select-evite-target='evite'><%= render "evite_template_1"%></div>
-      <div id="selected_evite_2"data-select-evite-target='evite'><%= render "evite_template_2"%></div>
-      <div id="selected_evite_3"data-select-evite-target='evite'><%= render "evite_template_3"%></div>
-      <div class="d-flex justify-content-center mt-3">
-        <%= form_with model: @e_vite, url: create_e_vite_path(@event), data: { behavior: "autosave" }, method: :post do |form| %>
-          <%= form.text_field :template_id, class:'d-none', id:'input_choise'%>
-          <%= form.submit value: 'Save', class: "btn btn-4u-black" %>
-        <% end %>
+<body id="guest">
+  <div class="container" data-controller="select-evite">
+    <div class="row">
+      <div class="d-flex flex-column mb-3 col-3 align-self-center" id="column_template">
+        <div data-action='click->select-evite#displayEvite'><%= image_tag "e_vite_1.png", id: "e_vite_1"%></div>
+        <div data-action='click->select-evite#displayEvite'><%= image_tag "e_vite_2.png", id: "e_vite_2"%></div>
+        <div data-action='click->select-evite#displayEvite'><%= image_tag "e_vite_3.png", id: "e_vite_3"%></div>
+      </div>
+      <div class="row col-9 align-items-center flex-column mt-5">
+        <div id="selected_evite_1"data-select-evite-target='evite'><%= render "evite_template_1"%></div>
+        <div id="selected_evite_2"data-select-evite-target='evite'><%= render "evite_template_2"%></div>
+        <div id="selected_evite_3"data-select-evite-target='evite'><%= render "evite_template_3"%></div>
+        <div class="d-flex justify-content-center mt-3">
+          <%= form_with model: @e_vite, url: create_e_vite_path(@event), data: { behavior: "autosave" }, method: :post do |form| %>
+            <%= form.text_field :template_id, class:'d-none', id:'input_choise'%>
+            <%= form.submit value: 'Save', class: "btn btn-4u" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</body>

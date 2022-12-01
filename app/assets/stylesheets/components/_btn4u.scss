@@ -13,3 +13,22 @@
     border: 1px solid black;
   }
 }
+
+.btn-4u-green {
+  background-color: #C7E8CE;
+  color: black;
+  margin-right: 20px;
+
+  &:hover {
+    border: 1px solid #C7E8CE;
+  }
+}
+
+.btn-4u-red {
+  background-color: #F4B7AE;
+  color: black;
+
+  &:hover {
+    border: 1px solid #F4B7AE;
+  }
+}
