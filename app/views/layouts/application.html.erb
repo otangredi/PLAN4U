@@ -20,4 +20,15 @@
     <%= yield %>
     <%= turbo_frame_tag "remote_modal" %>
   </body>
+
+  <script type="text/javascript">
+  setTimeout(function() {
+    const alert_div = document.querySelector('.alert')
+    if (alert_div) {
+      alert_div.style.display= "none"
+    }
+  }, 3000)
+
+
+  </script>
 </html>
