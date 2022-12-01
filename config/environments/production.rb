@@ -101,7 +101,7 @@ Rails.application.configure do
     port:                 587,
     domain:               'plan4you.xyz',
     user_name:            'plan.4.youu2@gmail.com',
-    password:             'avuevrkkjdxfzafv',
+    password:             '',
     authentication:       'plain',
     enable_starttls_auto: true,
     open_timeout:         5,
