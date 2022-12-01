@@ -1,8 +1,8 @@
 <div class="home-page-container">
   <div class="row d-flex align-items-stretch">
-    <div class="col-4 d-flex align-items-stretch">
+    <div class="col-5 d-flex align-items-stretch">
       <div class="col-12 m-3 ps-4 d-flex flex-column">
-        <%= image_tag "plan_for_you_logo.png", class: "", width: 230, height: 61 %>
+        <%= image_tag "plan_for_you_logo.png", class: "", width: 200 %>
         <div class="landing-page-text flex-fill d-flex flex-column justify-content-center align-items-start">
           <% if user_signed_in? %>
             <% if current_user.events.any? %>
@@ -10,23 +10,22 @@
               <%= current_user.last_name %>!</h1>
               <%= link_to "My Event", events_path, class: "btn btn-4u-black" %>
             <% else %>
-              <h1>Welcome, <%= current_user.first_name %> <br>
-              <%= current_user.last_name %>!</h1>
-              <h5>You still have not created your event. <br>
-              Please create your event to see what <br>
-              Plan For You can help you with.</h5>
+              <h1><strong>Automated, Stress-Free<br>
+              Seating Chart Generator</strong></h1>
+              <p>Plan For You will automatically create a seating chart for your event based on your guests' preferences. We also offer easy-to-use planning tools for your event such as guest list management, simple online RSVP and so much more!</p>
               <%= link_to "Create an Event", new_event_path, "data-controller": "turbo", class: "btn btn-4u-black" %>
             <% end %>
           <% else %>
-            <h2>Automated, Stress-Free<br>
-            Seating Chart Generator</h2>
+            <h1><strong>Automated, Stress-Free<br>
+            Seating Chart Generator</strong></h1>
+            <p>Plan For You will automatically create a seating chart for your event based on your guests' preferences. We also offer easy-to-use planning tools for your event such as guest list management, simple online RSVP and so much more!</p>
             <%= link_to "Get Started", new_user_registration_path, class: "btn btn-4u-black" %>
           <% end %>
         </div>
       </div>
     </div>
 
-    <div class="col-8">
+    <div class="col-7">
       <%= image_tag "landing_page.png", class: 'landing-page' %>
     </div>
   </div>
