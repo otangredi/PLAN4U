@@ -92,14 +92,14 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   host = "http://plan4you.herokuapp.com"
-  config.action_mailer.default_url_options = { host: "http://plan4you.herokuapp.com" }
+  config.action_mailer.default_url_options = { host: "https://www.plan4you.xyz" }
 
   # SMTP settings for gmail
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'plan4you.herokuapp.com',
+    domain:               'plan4you.xyz',
     user_name:            'plan.4.youu2@gmail.com',
     password:             'avuevrkkjdxfzafv',
     authentication:       'plain',
