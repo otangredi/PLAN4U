@@ -1,10 +1,14 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Raleway:ital,wght@0,200;0,500;0,700;1,200;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,800;1,400;1,800&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital@0;1&family=Domine&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;1,300;1,900&family=Playfair+Display:ital@0;1&display=swap');
 
 // Define fonts for body and headers
-$body-font: 'Raleway', sans-serif;
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: 'Merriweather', 'serif';
+$headers-font: 'Merriweather', 'serif';
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

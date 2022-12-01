@@ -1,8 +1,15 @@
 .btn-4u {
   background-color: #fff8f8;
+  &:hover {
+    border: 1px solid #fff8f8;
+  }
 }
 
 .btn-4u-black {
   background-color: black;
   color: white;
+
+  &:hover {
+    border: 1px solid black;
+  }
 }
