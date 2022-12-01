@@ -1,0 +1,35 @@
+.modal-left-container {
+  background-color: #ffe6e6;
+}
+
+.modal-left {
+  padding-top: 40px;
+  padding-left: 20px;
+}
+
+.modal-right {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  margin-right: 75px;
+  margin-left: 56px;
+  .btn-close {
+    position: absolute;
+    right: 14px;
+    top: 9px;
+  }
+  .submit {
+    justify-content: center;
+    margin: 0 auto;
+    margin-left: 114px;
+    width: 200px;
+  }
+  .new_event input {
+    border-right: 0;
+    border-top: 0;
+    border-left: 0;
+    border-radius: 0;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}

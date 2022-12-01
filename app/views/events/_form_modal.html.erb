@@ -2,14 +2,18 @@
   <div class="modal fade" data-controller="modal">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-4">
-              <h1>Tell us<br>about<br>your<br>event</h1>
+        <div class="modal-body p-0">
+          <div class="row modal-row">
+            <div class="col-4 modal-left-container">
+              <div class="modal-left">
+                <h1>Tell us<br>about<br>your<br>event</h1>
+              </div>
             </div>
-            <div class="col-8">
-              <%= render "events/form", event: event %>
+            <div class="col-8 p-0">
+              <div class="modal-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <%= render "events/form", event: event %>
+              </div>
             </div>
           </div>
         </div>

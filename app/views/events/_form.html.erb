@@ -11,10 +11,10 @@
       </ul>
     </div>
   <% end %>
-    <%= f.label :partner_first_name, class: 'form-label' %>
+    <%= f.label :Name_of_your_partner, class: 'form-label' %>
   <div class="mb-3 d-flex">
     <%= f.input :partner_first_name, class: 'form-control', label: false, placeholder: "First Name" %>
-    <%= f.input :partner_last_name, class: 'form-control', label: false %>
+    <%= f.input :partner_last_name, class: 'form-control', label: false, placeholder: "Last Name" %>
   </div>
 
   <div class="mb-3">
@@ -30,6 +30,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit 'Submit', class: 'btn btn-4u' %>
+    <%= f.submit 'Continue', class: 'btn btn-4u submit' %>
   </div>
 <% end %>
