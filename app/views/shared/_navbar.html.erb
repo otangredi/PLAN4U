@@ -21,14 +21,14 @@
               <%= link_to "Guest List", event_guests_path(current_user.events.first), class: "nav-link" %>
             </li>
             <li class="nav-item active">
+              <%= link_to "Invitation Card", new_event_e_vite_path(current_user.events.first), class: "nav-link" %>
+            </li>
+            <li class="nav-item active">
               <% if current_user.events.first.guest_tables.any? %>
                 <%= link_to "Seating Chart", event_guest_table_path(current_user.events.first, current_user.events.first.guest_tables.first), class: "nav-link" %>
               <% else %>
                 <%= link_to "Seating Chart", new_event_guest_table_path(current_user.events.first), class: "nav-link" %>
               <% end %>
-            </li>
-            <li class="nav-item active">
-              <%= link_to "Invitation Card", new_event_e_vite_path(current_user.events.first), class: "nav-link" %>
             </li>
           <% end %>
       </ul>
