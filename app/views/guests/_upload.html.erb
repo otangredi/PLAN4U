@@ -8,8 +8,6 @@
       <div class="modal-body">
         <%= form_with(model: guest, url: guestlist_path, method: 'post') do |form| %>
           <%= form.file_field :file %>
-      </div>
-      <div class="modal-footer">
           <%= form.submit class: "btn btn-4u" %>
         <% end %>
       </div>
