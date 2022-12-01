@@ -1,10 +1,14 @@
-<% if @event.guests.map {|g| g.guest_choice == nil }.include?(true) %>
-  <div class="waiting">
-    <p>We're waiting for all the guests to RSVP to make happy tables❤️</p>
+<body id="guest">
+  <div class="container mt-3 w-25" style="padding-top: 200px;">
+    <% if @event.guests.map {|g| g.guest_choice == nil }.include?(true) %>
+      <div class="waiting">
+        <p>We're waiting for all the guests to RSVP to make happy tables ❤️</p>
+      </div>
+    <% else %>
+      <%= simple_form_for([@event, @table]) do |f| %>
+        <%= f.input :num_of_seats, label: "No. of Chairs Per Table" %>
+        <%= f.submit "Create Tables", class: "btn btn-4u-black" %>
+      <% end %>
+    <% end %>
   </div>
-<% else %>
-  <%= simple_form_for([@event, @table]) do |f| %>
-    <%= f.input :num_of_seats %>
-    <%= f.submit %>
-  <% end %>
-<% end %>
+</body>
