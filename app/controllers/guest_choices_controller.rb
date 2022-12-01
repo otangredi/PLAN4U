@@ -57,7 +57,7 @@ class GuestChoicesController < ApplicationController
     @guest = Guest.find(params[:guest_id])
     @guest_choice = GuestChoice.find(params[:id])
     @guest_choice.choices = [Guest.find(params[:guest_id]).name, Guest.find(params[:guest_choice][:choices].first).name, Guest.find(params[:guest_choice][:choices].second).name]
-    if @guest_choice.update(guest_choice_params)
+    if @guest_choice.update({ choices: @guest_choice.choices })
       redirect_to guest_guest_choices_path(@guest)
     else
       render :edit, status: :unprocessable_entity
@@ -67,7 +67,6 @@ class GuestChoicesController < ApplicationController
   private
 
   def guest_choice_params
-
     params.require(:guest_choice).permit(choices: [])
   end
 end
