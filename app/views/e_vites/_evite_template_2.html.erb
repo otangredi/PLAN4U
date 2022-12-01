@@ -2,7 +2,7 @@
   <div class="align-self-center">
     <p id="names" class="text-center"><%= current_user.first_name %> <%= current_user.last_name %><br>
       & <br>
-      <%= @event.partner_name %></p>
+      <%= @event.partner_first_name %> <%= @event.partner_last_name %> </p>
     <p id="text" class="text-center">Request the pleasure of your company at <br>
       the ceremony of their wedding</p>
     <p class="text-center"><%= @event.date.strftime("%B %e, %Y") %></p>

@@ -1,7 +1,7 @@
 <div class="events-container mb-3 mt-5">
   <div class="upper-container d-flex h-100">
     <div class="photo-container d-flex flex-column align-self-center">
-      <h1><%= current_user.first_name %> & <%= @event.partner_name %></h1>
+      <h1><%= current_user.first_name %> & <%= @event.partner_first_name %></h1>
       <h5><%= @event.date.strftime("%B %e, %Y") %></h5>
       <p>Only <%= (@event.date - Date.today).to_i %> days to go!</p>
     </div>
