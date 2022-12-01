@@ -1,8 +1,8 @@
 <div data-controller="edit-guest" class="each-guest-container">
   <div class="<%= 'd-none' if guest.errors.any? %> row" data-edit-guest-target="infos">
-    <div class="col each-guest"><%= guest.name %></div>
-    <div class="col each-guest"><%= guest.email %></div>
-    <div class="col each-guest"><%= guest.status %></div>
+    <div class="col each-guest"><p><%= guest.name %></p></div>
+    <div class="col each-guest"><p><%= guest.email %></p></div>
+    <div class="col each-guest sent"><p><%= guest.status %></p></div>
     <% if action_name != "show" %>
     <div class="col d-flex justify-content-center align-items-center guest-icons-container">
       <div class="guest-icons-wrapper">
@@ -26,19 +26,19 @@
                         }) do |f| %>
       <div class="row">
         <div class="col">
-          <%= f.input :name, class: "form-control rounded td", label: false %>
+          <%= f.input :name, label: false, input_html: { class: 'edit-guest' } %>
         </div>
         <div class="col">
-          <%= f.input :relationship, class: "form-control rounded", label: false %>
+          <%= f.input :relationship, label: false, input_html: { class: 'edit-guest' } %>
         </div>
         <div class="col">
-          <%= f.input :email, class: "form-control rounded", label: false %>
+          <%= f.input :email, label: false, input_html: { class: 'edit-guest' } %>
         </div>
         <div class="col">
-          <%= f.input :status, class: "form-control rounded", label: false, collection: Guest.statuses.keys %>
+          <%= f.input :status, label: false, collection: Guest.statuses.keys, input_html: { class: 'edit-guest col' } %>
         </div>
         <div class="col">
-          <%= f.submit class: "btn btn-primary", label: false %>
+          <%= f.submit 'Update', class: "btn btn-4u-black", label: false %>
         </div>
       </div>
     <% end %>

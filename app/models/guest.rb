@@ -12,7 +12,7 @@ class Guest < ApplicationRecord
     }
 
   enum status: {
-    "E-vite not sent": 0,
+    "Not Sent": 0,
     "Awaiting Response": 1,
     "Attending": 2,
     "Not Attending": 3
