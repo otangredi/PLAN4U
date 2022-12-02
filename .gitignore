@@ -41,3 +41,6 @@
 *.swp
 .DS_Store
 .env*
+
+# Ignore Mailer settings
+/config/initializers/app_env_vars.rb
