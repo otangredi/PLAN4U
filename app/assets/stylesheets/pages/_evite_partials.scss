@@ -1,45 +1,48 @@
 #selected_evite_1{
   background-image: url('e_vite_1.png') ;
-  width: 500px;
-  height: 500px;
+  width: 480px;
+  height: 480px;
   background-repeat: no-repeat;
   background-size: contain;
+  border: 1px solid darkgray;
 }
 
 #selected_evite_2{
   background-image: url('e_vite_2.png') ;
-  width: 500px;
-  height: 500px;
+  width: 480px;
+  height: 480px;
   background-repeat: no-repeat;
   background-size: contain;
+  border: 1px solid darkgray;
 }
 
 #selected_evite_3{
   background-image: url('e_vite_3.png') ;
-  width: 500px;
-  height: 500px;
+  width: 480px;
+  height: 480px;
   background-repeat: no-repeat;
   background-size: contain;
+  border: 1px solid darkgray;
 }
 
 #e_vite_1 {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   margin-bottom: 15px;
   margin-top: 15px;
   border: 1px solid black;
 }
 
 #e_vite_2 {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   margin-bottom: 15px;
   border: 1px solid black;
 }
 
 #e_vite_3 {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   margin-bottom: 15px;
   border: 1px solid black;
 }
@@ -49,5 +52,4 @@
   align-items: center;
   width: 330px;
   padding-top: 20px;
-  padding-bottom: 20px;
 }
