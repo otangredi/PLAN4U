@@ -1,3 +1,6 @@
+.e-vite-row {
+  height: calc(100vh - 143px);
+}
 .e-vite-top-container {
   margin: 0 auto;
 }
@@ -9,7 +12,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   .container {
-    border: 1px solid black;
+    border: 1px solid #bfbdbd;
     margin-top: 20px;
   }
 }
@@ -21,7 +24,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   .container {
-    border: 1px solid black;
+    border: 1px solid #bfbdbd;
     margin-top: 20px;
   }
 }
@@ -33,7 +36,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   .container {
-    border: 1px solid black;
+    border: 1px solid #bfbdbd;
     margin-top: 20px;
   }
 }
@@ -43,21 +46,21 @@
   height: 180px;
   margin-bottom: 15px;
   margin-top: 15px;
-  border: 1px solid black;
+  border: 1px solid #bfbdbd;
 }
 
 #e_vite_2 {
   width: 180px;
   height: 180px;
   margin-bottom: 15px;
-  border: 1px solid black;
+  border: 1px solid #bfbdbd;
 }
 
 #e_vite_3 {
   width: 180px;
   height: 180px;
   margin-bottom: 15px;
-  border: 1px solid black;
+  border: 1px solid #bfbdbd;
 }
 
 #column_template {

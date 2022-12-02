@@ -33,3 +33,28 @@
     }
   }
 }
+
+//upload modal
+
+.upload-modal-content {
+  height: 220px;
+
+  #file {
+    width: 250px;
+    margin-top: 20px;
+  }
+
+  .upload-save {
+    position: absolute;
+    top: 85px;
+    left: 219px;
+    margin-top: 10px;
+    width: 80px;
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
