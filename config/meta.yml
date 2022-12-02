@@ -1,4 +1,4 @@
-meta_product_name: "Plan For You"
+meta_name: "Plan For You"
 meta_title: "Plan For You - Automated, Stress-Free Seating Chart Generator"
 meta_description: "An interactive web app that automatically creates a seating chart for your event based on your guests' preferences. Plan For You offers easy-to-use planning tools for your event such as guest list management, simple online RSVP & so much more."
 meta_image: "meta_tag_image.png" # should exist in `app/assets/images/`
