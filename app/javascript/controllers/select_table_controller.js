@@ -11,6 +11,9 @@ export default class extends Controller {
     event.preventDefault()
     // console.log(this.tableTargets[event.target.id - 1])
     console.log(this.tableTargets)
+    this.tableTargets.forEach(element => {
+      element.classList.add("d-none")
+    });
     this.tableTargets[event.target.id - 1].classList.toggle("d-none")
   }
 }
