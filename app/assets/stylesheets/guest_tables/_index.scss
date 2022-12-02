@@ -14,9 +14,14 @@
 .sm-card {
   background-color: white;
   border-radius: 10px;
-  width: 330px;
-  height: 85px;
-  margin: 20px 10px;
+  width: 298px;
+  height: fit-content;
+  margin: 55px 10px;
+  margin-left: 21px;
+  display: flex;
+  p {
+    margin: 0;
+  }
 }
 
 .right-container {

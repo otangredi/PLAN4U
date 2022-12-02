@@ -6,19 +6,19 @@
         <div class="landing-page-text flex-fill d-flex flex-column justify-content-center align-items-start">
           <% if user_signed_in? %>
             <% if current_user.events.any? %>
-              <h2>Welcome, <%= current_user.first_name %> <br>
-              <%= current_user.last_name %>!</h2>
+              <h1>Welcome, <%= current_user.first_name %> <br>
+              <%= current_user.last_name %>!</h1>
               <%= link_to "My Event", events_path, class: "btn btn-4u-black" %>
             <% else %>
               <h2><strong>Automated, Stress-Free<br>
               Seating Chart Generator</strong></h2>
-              <p>Plan For You will automatically create a seating chart for your event based on your guests' preferences.</p>
+              <h5>Plan For You will automatically create a seating chart for your event based on your guests' preferences.</h5>
               <%= link_to "Create an Event", new_event_path, "data-controller": "turbo", class: "btn btn-4u-black" %>
             <% end %>
           <% else %>
             <h2><strong>Automated, Stress-Free<br>
             Seating Chart Generator</strong></h2>
-            <p>Plan For You will automatically create a seating chart for your event based on your guests' preferences. We also offer easy-to-use planning tools for your event such as guest list management, simple online RSVP and so much more!</p>
+            <h5>Plan For You will automatically create a seating chart for your event based on your guests' preferences.</h5>
             <%= link_to "Get Started", new_user_registration_path, class: "btn btn-4u-black" %>
           <% end %>
         </div>
@@ -26,7 +26,7 @@
     </div>
 
     <div class="col-7">
-      <%= image_tag "landing_page.png", class: 'landing-page' %>
+      <%= image_tag "landing_page.png", class: 'landing-page-img' %>
     </div>
   </div>
 </div>
