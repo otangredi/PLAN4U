@@ -5,24 +5,25 @@
       <h5><%= @event.date.strftime("%B %e, %Y") %></h5>
       <p>Only <%= (@event.date - Date.today).to_i %> days to go!</p>
     </div>
-
     <div class="checklist-container d-flex flex-column" data-controller="checkbox">
       <div class="d-flex flex-column">
+        <div class="line d-flex flex-column">
         <div class="planning-title">PLANNING CHECKLIST</div>
-        <div class="item">
-          <input class="form-check-input" type="checkbox" value="" checked id="Create_your_event"> Create your event
-        </div>
-        <div class="item">
-          <%= check_box_tag 'guest_list', current_user.guest_list, current_user.guest_list, data: {action: 'click->checkbox#changeValue'} %>
-          <%= label_tag 'guest_list', 'Create your guest list' %>
-        </div>
-        <div class="item">
-          <%= check_box_tag 'design_cards', current_user.design_cards, current_user.design_cards, data: {action: 'click->checkbox#changeValue'} %>
-          <%= label_tag 'design_cards', 'Design your invitation card' %>
-        </div>
-        <div class="item">
-          <%= check_box_tag 'send_cards', current_user.send_cards, current_user.send_cards, data: {action: 'click->checkbox#changeValue'} %>
-          <%= label_tag 'send_cards', 'Send your invitation card' %>
+          <div class="item">
+            <input class="form-check-input" type="checkbox" value="" checked id="Create_your_event"> Create your event
+          </div>
+          <div class="item">
+            <%= check_box_tag 'guest_list', current_user.guest_list, current_user.guest_list, data: {action: 'click->checkbox#changeValue'} %>
+            <%= label_tag 'guest_list', 'Create your guest list' %>
+          </div>
+          <div class="item">
+            <%= check_box_tag 'design_cards', current_user.design_cards, current_user.design_cards, data: {action: 'click->checkbox#changeValue'} %>
+            <%= label_tag 'design_cards', 'Design your invitation card' %>
+          </div>
+          <div class="item">
+            <%= check_box_tag 'send_cards', current_user.send_cards, current_user.send_cards, data: {action: 'click->checkbox#changeValue'} %>
+            <%= label_tag 'send_cards', 'Send your invitation card' %>
+          </div>
         </div>
       </div>
     </div>
