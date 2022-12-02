@@ -5,7 +5,7 @@
     height: 100vh;
   }
 
-  .landing-page {
+  .landing-page-img {
     width: 100%;
     object-fit: cover;
     height: 100vh;
@@ -13,18 +13,22 @@
 }
 
 .landing-page-text {
-  margin-left: 10px;
+  margin-left: 15px;
   margin-right: 75px;
 
-  h1 {
+  h1, h2 {
     margin-bottom: 50px;
   }
 
-  p {
+  h5 {
     margin-bottom: 30px;
   }
 
   .btn-4u-black {
     margin-bottom: 50px;
   }
+}
+
+.landing-page-img {
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
 }

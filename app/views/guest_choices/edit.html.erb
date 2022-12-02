@@ -1,11 +1,11 @@
 <body id="guest">
   <div class="container">
     <div>
-      <p class="d-flex justify-content-center mt-5 mb-5">Below are the invitees to our wedding, please select two guests you prefer to sit with.</p>
+      <h4 class="d-flex justify-content-center mt-5 mb-5">Please select two guests you prefer to sit with.</h4>
       <div class="d-flex justify-content-center">
         <%= simple_form_for([@guest, @guest_choice]) do |f| %>
-        <%= f.input :choices, as: :check_boxes, collection: @guests.where(relationship: @guest.relationship), include_hidden: false %>
-        <%= f.submit "Send RSVP", class: "btn btn-4u-black" %>
+        <%= f.input :choices, as: :check_boxes, collection: @guests.where(relationship: @guest.relationship), include_hidden: false, label: false %>
+        <%= f.submit "Send RSVP", class: "btn btn-4u-black send-rsvp" %>
         <% end %>
       </div>
     </div>
